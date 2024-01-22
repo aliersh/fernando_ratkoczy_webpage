@@ -2,9 +2,10 @@
   "name": "fernando-ratkoczy-webpage",
   "version": "1.0.0",
   "description": "One-page website for Fernando Ratkoczy, a career coach, designed to showcase his services and facilitate client engagement. Built with Bootstrap for responsive design and SCSS for advanced styling, bundled efficiently using Parcel.",
-  "main": "index.js",
+  "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/aliersh/fernando_ratkoczy_webpage/issues"
   },
-  "homepage": "https://github.com/aliersh/fernando_ratkoczy_webpage#readme"
+  "homepage": "https://github.com/aliersh/fernando_ratkoczy_webpage#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
 }
