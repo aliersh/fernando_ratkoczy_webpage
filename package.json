@@ -19,5 +19,8 @@
   "homepage": "https://github.com/aliersh/fernando_ratkoczy_webpage#readme",
   "devDependencies": {
     "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
   }
 }
