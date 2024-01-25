@@ -1,2 +1,4 @@
 @use 'scss-reset/reset';
-@import "/node_modules/bootstrap/scss/bootstrap.scss"
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+@import 'variables';
+@import 'custom-styles';

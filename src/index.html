@@ -3,21 +3,45 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <title>Fernando Ratkoczy - Career Coach</title>
     </head>
     <body>
         <header>
-            <div>Logo</div> <!-- Change to logo vectorized image -->
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
-                    <li>Testimonials</li>
-                    <li>Fees</li>
-                    <li>Contact</li>
-                </ul>
-                <button>Book</button>
+            <nav class="navbar navbar-expand-lg bg-hero">
+                <div class="container d-flex justify-content-between">
+                    <img src="images/logo-fernando-red.svg" alt="Fernando's Logo" width="220" class="navbar-brand">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end text-center" id="navbar-menu">
+                        <ul class="navbar-nav nav-underline">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Testimonials</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Fees</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="col-lg-3 text-lg-end mt-3 mt-lg-0">
+                            <button type="button" class="btn btn-custom">Book</button>
+                        </div>
+                    </div>
+                </div>
             </nav>
             <section>
                 <h1>Hi, I'm Fernando</h1>
