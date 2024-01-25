@@ -7,7 +7,7 @@
     }
 }
 
-// Navbar background
+// Navbar and Hero section background
 .bg-hero {
     background-color: $bg-hero-color;
 }
@@ -44,4 +44,17 @@
 // Toggler icon customization
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+// Text color customization for specific contexts
+.heading-text-dark-bg {
+    color: $text-dark-bg; // For headings on dark background
+}
+
+.accent-text {
+    color: $accent-color; // For text that needs accentuation
+}
+
+.sub-text-dark-bg {
+    color: $text-sub-dark-bg; // For subtext on dark backgrounds
 }

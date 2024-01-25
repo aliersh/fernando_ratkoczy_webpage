@@ -1,4 +1,13 @@
-$bg-hero-color: #121212;
-$text-dark-bg: #FFFFFF;
-$accent-color: #C62828;
-$text-font-family: 'Roboto', sans-serif;
+// Color Definitions
+// Primary and accent colors used throughout the site
+$bg-hero-color: #121212; // Dark background color for hero sections
+$accent-color: #C62828; // Primary accent color for emphasis
+
+// Text Color Definitions
+// Colors specifically for text on different backgrounds
+$text-dark-bg: #FFFFFF; // Text color for dark backgrounds
+$text-sub-dark-bg: #D1D1D1; // Subdued text color for dark backgrounds
+
+// Typography
+// Font families and other typography-related settings
+$text-font-family: 'Roboto', sans-serif; // Primary font family for text
