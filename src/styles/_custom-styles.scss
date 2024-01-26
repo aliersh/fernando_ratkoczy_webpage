@@ -70,3 +70,17 @@
 .bg-light-one { // Light background alternative 1
     background-color: $bg-light-one;
 }
+
+.bg-light-two { // Light background alternative 1
+    background-color: $bg-light-two;
+}
+
+.fact {
+    h2 {
+        color: $accent-color;
+    }
+
+    p {
+        color: $text-light-bg;
+    }
+}
