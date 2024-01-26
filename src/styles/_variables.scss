@@ -2,11 +2,14 @@
 // Primary and accent colors used throughout the site
 $bg-hero-color: #121212; // Dark background color for hero sections
 $accent-color: #C62828; // Primary accent color for emphasis
+$bg-light-one: #FAFAFA; // Light background alternative 1 for sections
 
 // Text Color Definitions
 // Colors specifically for text on different backgrounds
-$text-dark-bg: #FFFFFF; // Text color for dark backgrounds
-$text-sub-dark-bg: #D1D1D1; // Subdued text color for dark backgrounds
+$heading-text-dark-bg: #FFFFFF; // Heading text color for dark backgrounds
+$heading-text-light-bg: #424242; // Heading text color for light backgrounds
+$text-dark-bg: #D1D1D1; // Text color for dark backgrounds
+$text-light-bg: #494949; // Text color for light backgrounds
 
 // Typography
 // Font families and other typography-related settings

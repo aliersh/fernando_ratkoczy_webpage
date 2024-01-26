@@ -48,13 +48,25 @@
 
 // Text color customization for specific contexts
 .heading-text-dark-bg {
-    color: $text-dark-bg; // For headings on dark background
+    color: $heading-text-dark-bg; // For headings on dark background
+}
+
+.heading-text-light-bg { // For headings on light background
+    color: $heading-text-light-bg;
 }
 
 .accent-text {
     color: $accent-color; // For text that needs accentuation
 }
 
-.sub-text-dark-bg {
-    color: $text-sub-dark-bg; // For subtext on dark backgrounds
+.text-dark-bg {
+    color: $text-dark-bg; // For text on dark backgrounds
+}
+
+.text-light-bg { // For text on light backgrounds
+    color: $text-light-bg;
+}
+
+.bg-light-one { // Light background alternative 1
+    background-color: $bg-light-one;
 }
