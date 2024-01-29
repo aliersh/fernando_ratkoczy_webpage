@@ -84,3 +84,11 @@
         color: $text-light-bg;
     }
 }
+
+.feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: .75rem;
+    background-color: $accent-color;
+    color: $icon-text;
+}
