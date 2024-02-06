@@ -8,7 +8,7 @@ h6 {
 }
 
 #navbar {
-    background-color: $dark-bg;
+    background-color: $dark-background;
 }
 
 #logo-img {
@@ -16,6 +16,7 @@ h6 {
 }
 
 .nav-link {
+    font-family: $font-secondary;
     color: $navbar-text-color;
 
     &:hover {
@@ -30,18 +31,20 @@ h6 {
 .btn-custom {
     //Custom style for buttons
     background-color: $accent-color;
-    color: $button-text;
+    font-family: $font-secondary;
+    color: $button-text-color;
     @media (min-width: 992px) {
         width: auto !important; //Override w-100 bootstrap class
     }
 }
 
 #home {
-    background-color: $dark-bg;
+    background-color: $dark-background;
 }
 
 #hero-head-text {
-    color: $heading-text-light-color;
+    font-family: $font-primary;
+    color: $hero-heading-color;
 }
 
 .accent-text {
@@ -49,7 +52,8 @@ h6 {
 }
 
 #hero-text {
-    color: $text-light-color;
+    font-family: $font-secondary;
+    color: $hero-text-color;
 }
 
 #hero-img {
@@ -57,21 +61,30 @@ h6 {
 }
 
 #transform {
-    background-color: $light-bg-alt-1;
+    background-color: $light-background-1;
 }
 
 .section-title {
-    //Style for all section titles
-    color: #555;
+    font-family: $font-primary;
+    font-weight: 600;
+    color: $section-title-color;
 }
 
-.section-phrase .accent-text {
-    //Style for all accent text in section phrases
-    font-weight: 900;
+.section-phrase {
+    font-family: $section-phrase-font;
+    font-weight: 700;
+    color: $section-phrase-color;
+}
+
+.section-text {
+    font-family: $section-text-font;
+    color: $section-text-color;
+    line-height: normal; // FIXME: Check line height was lh-base on bootstrap
 }
 
 #facts {
-    background-color: $light-bg-alt-2;
+    background-color: $facts-background;
+    font-family: $font-secondary;
 }
 
 .service-card {
@@ -81,39 +94,52 @@ h6 {
 }
 
 .inner-service-card {
-    // align-items: center;
     padding: 1.2rem;
     padding-top: 4.5rem;
-    background-color: $light-accent-color;
+    background-color: $card-color;
     border-radius: 0.8rem;
 }
 
 .service-pricing {
+    font-family: $card-pricing-font;
+    color: $card-pricing-text-color;
     position: absolute;
     top: 25;
     right: 11;
-    background-color: $half-light-accent-color;
+    background-color: $card-service-pricing-color;
     border-radius: 99rem 0 0 99rem;
     display: flex;
     align-items: center;
     padding: 0.625rem 0.75rem;
     font-size: 1.25rem;
     font-weight: 600;
-    // color
 }
 
 .service-pricing .small {
+    font-family: $card-pricing-small-font;
+    color: $card-pricing-small-color;
     font-size: 0.75rem;
     margin-left: 0.25rem;
+}
+
+.card-title {
+    font-family: $card-title-font;
+    color: $card-title-color;
+}
+
+.card-subtitle {
+    font-family: $card-subtitle-font;
+    color: $card-subtitle-color;
+}
+
+.card-features {
+    font-family: $card-features-font;
+    color: $card-features-color;
 }
 
 i {
     color: $accent-color;
 }
-
-// #testimonials {
-//     background-color: $light-bg-alt-2;
-// }
 
 .testimonial-carousel {
     border-radius: 1rem;
@@ -122,19 +148,19 @@ i {
 }
 
 .inner-testimonial-carousel {
-    // align-items: center;
     padding: 1.2rem;
-    background-color: $light-accent-color;
+    background-color: $testimonial-carousel-color;
     border-radius: 0.8rem;
 }
 
 .testimonial-text {
     line-height: 1.6;
-    color: $text-subtext;
+    color: $testimonial-text;
 }
 
 .testimonial-footer {
     strong {
+        color: $testimonial-name;
         font-weight: 600;
         font-size: 1.25rem;
     }
@@ -142,7 +168,7 @@ i {
     small {
         display: block;
         font-size: 0.9rem;
-        color: $text-footer;
+        color: $testimonial-position;
         font-style: italic;
     }
 }
@@ -151,11 +177,11 @@ i {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: $accent-color;
+    background-color: $carousel-dot-inactive-color;
 }
 
 #carouselTestimonial .carousel-indicators .active {
-    background-color: $dark-accent-color;
+    background-color: $carousel-dot-active-color;
 }
 
 #carouselTestimonial .carousel-control-prev,
@@ -163,7 +189,7 @@ i {
     width: 40px;
     height: 40px;
     margin: auto 30px;
-    background-color: $accent-color;
+    background-color: $carousel-arrow-bg-inactive-color;
     border-radius: 50%;
 }
 
@@ -175,14 +201,14 @@ i {
 #carouselTestimonial .carousel-control-prev-icon:before {
     content: "\f104";
     font-family: "FontAwesome";
-    color: $button-text;
+    color: $carousel-arrow-inactive-color;
     font-size: 20px;
 }
 
 #carouselTestimonial .carousel-control-next-icon:before {
     content: "\f105";
     font-family: "FontAwesome";
-    color: $button-text;
+    color: $carousel-arrow-inactive-color;
     font-size: 20px;
 }
 
@@ -190,30 +216,30 @@ i {
 #carouselTestimonial .carousel-control-next:hover,
 #carouselTestimonial .carousel-control-prev:focus,
 #carouselTestimonial .carousel-control-next:focus {
-    background-color: $dark-accent-color;
+    background-color: $carousel-arrow-active-color;
     outline: none;
 }
 
-.fees-card {
-    border-radius: 1rem;
-    box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
-    padding: 0.7rem;
-}
+// .fees-card {
+//     border-radius: 1rem;
+//     box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+//     padding: 0.7rem;
+// }
 
-#fees .card-header {
-    background-color: $light-accent-color;
-    border-color: 1px solid black;
-}
+// #fees .card-header {
+//     background-color: $light-accent-color;
+//     border-color: 1px solid black;
+// }
 
-#cta {
-    background-color: $light-bg-alt-2;
-}
+// #cta {
+//     background-color: $light-bg-alt-2;
+// }
 
 .contact-card {
     border-radius: 1rem;
     box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
     padding: 0.7rem;
-    max-width: 300px; // Adjust this value to your preference
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -221,12 +247,12 @@ i {
 .inner-contact-card {
     // align-items: center;
     padding: 1.2rem;
-    background-color: $light-accent-color;
+    background-color: $card-color;
     border-radius: 0.8rem;
 }
 
 #footer {
-    background-color: $dark-bg;
+    background-color: $dark-background;
     color: #fff;
 
     img {
