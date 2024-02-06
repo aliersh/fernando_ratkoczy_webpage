@@ -1,19 +1,13 @@
-// Color Definitions
-// Primary and accent colors used throughout the site
-$bg-hero-color: #121212; // Dark background color for hero sections
-$accent-color: #C62828; // Primary accent color for emphasis
+$dark-bg: #121212; // Dark background
+$navbar-text-color: #ffffff; // Heading text color for dark backgrounds
+$button-text: #ffffff; // Color text for buttons
+$accent-color: #c62828; // Accent/brand color
 $dark-accent-color: #800020; // Darker accent color
-$bg-light-one: #FAFAFA; // Light background alternative 1 for sections
-$bg-light-two: #EDEDED; // Light background alternative 2 for sections
-
-// Text Color Definitions
-// Colors specifically for text on different backgrounds
-$heading-text-dark-bg: #FFFFFF; // Heading text color for dark backgrounds
-$heading-text-light-bg: #424242; // Heading text color for light backgrounds
-$text-dark-bg: #D1D1D1; // Text color for dark backgrounds
-$text-light-bg: #494949; // Text color for light backgrounds
-$icon-text: #FAFAFA;
-
-// Typography
-// Font families and other typography-related settings
-$text-font-family: 'Roboto', sans-serif; // Primary font family for text
+$heading-text-light-color: #ffffff; // Text light color for heading text in dark background
+$text-light-color: #d1d1d1; //Text light color for text in dark background
+$light-bg-alt-1: #ffffff; //Light background color alternative 1
+$light-bg-alt-2: lighten($accent-color, 50%);; //Light background color alternative 2
+$light-accent-color: lighten($accent-color, 50%); // Light background for cards
+$half-light-accent-color: lighten($accent-color, 25%);
+$text-subtext: #555;
+$text-footer: #777;

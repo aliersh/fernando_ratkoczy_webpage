@@ -1,106 +1,136 @@
-// Mixin for button hover effects
-@mixin btn-hover($color) {
-    &:hover {
-        background-color: lighten($color, 3%);
-        transform: scale(1.05);
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 1px;
 }
 
-// Navbar and Hero section background
-.bg-hero {
-    background-color: $bg-hero-color;
+#navbar {
+    background-color: $dark-bg;
 }
 
-// Navbar styles
-.navbar {
-    color: $text-dark-bg;
-    font-family: $text-font-family;
+#logo-img {
+    max-width: 220px;
 }
 
-// Navigation link styles
 .nav-link {
-    color: $text-dark-bg;
+    color: $navbar-text-color;
 
-    &:hover,
-    &.active,
-    &:focus {
+    &:hover {
         color: $accent-color;
     }
 }
 
-// Button customization
-.btn-custom {
-    background-color: $accent-color;
-    color: $text-dark-bg;
-    @include btn-hover($accent-color);
-}
-
-// Toggler customization
-.navbar-toggler {
-    background-color: $accent-color;
-}
-
-// Toggler icon customization
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-// Text color customization for specific contexts
-.heading-text-dark-bg {
-    color: $heading-text-dark-bg; // For headings on dark background
+.btn-custom {
+    //Custom style for buttons
+    background-color: $accent-color;
+    color: $button-text;
+    @media (min-width: 992px) {
+        width: auto !important; //Override w-100 bootstrap class
+    }
 }
 
-.heading-text-light-bg {
-    // For headings on light background
-    color: $heading-text-light-bg;
+#home {
+    background-color: $dark-bg;
+}
+
+#hero-head-text {
+    color: $heading-text-light-color;
 }
 
 .accent-text {
-    color: $accent-color; // For text that needs accentuation
+    color: $accent-color;
 }
 
-.text-dark-bg {
-    color: $text-dark-bg; // For text on dark backgrounds
+#hero-text {
+    color: $text-light-color;
 }
 
-.text-light-bg {
-    // For text on light backgrounds
-    color: $text-light-bg;
+#hero-img {
+    width: 700px;
 }
 
-.bg-light-one {
-    // Light background alternative 1
-    background-color: $bg-light-one;
+#transform {
+    background-color: $light-bg-alt-1;
 }
 
-.bg-light-two {
-    // Light background alternative 1
-    background-color: $bg-light-two;
+.section-title {
+    //Style for all section titles
+    color: #555;
 }
 
-.fact {
-    h2 {
-        color: $accent-color;
-    }
-
-    p {
-        color: $text-light-bg;
-    }
+.section-phrase .accent-text {
+    //Style for all accent text in section phrases
+    font-weight: 900;
 }
 
-.feature-icon {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 0.75rem;
-    background-color: $accent-color;
-    color: $icon-text;
+#facts {
+    background-color: $light-bg-alt-2;
+}
+
+.service-card {
+    border-radius: 1rem;
+    box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+    padding: 0.7rem;
+}
+
+.inner-service-card {
+    // align-items: center;
+    padding: 1.2rem;
+    padding-top: 4.5rem;
+    background-color: $light-accent-color;
+    border-radius: 0.8rem;
+}
+
+.service-pricing {
+    position: absolute;
+    top: 25;
+    right: 11;
+    background-color: $half-light-accent-color;
+    border-radius: 99rem 0 0 99rem;
+    display: flex;
+    align-items: center;
+    padding: 0.625rem 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    // color
+}
+
+.service-pricing .small {
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+}
+
+i {
+    color: $accent-color;
+}
+
+// #testimonials {
+//     background-color: $light-bg-alt-2;
+// }
+
+.testimonial-carousel {
+    border-radius: 1rem;
+    box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+    padding: 0.7rem;
+}
+
+.inner-testimonial-carousel {
+    // align-items: center;
+    padding: 1.2rem;
+    background-color: $light-accent-color;
+    border-radius: 0.8rem;
 }
 
 .testimonial-text {
-    font-size: 1rem;
     line-height: 1.6;
-    color: #555;
+    color: $text-subtext;
 }
 
 .testimonial-footer {
@@ -112,7 +142,7 @@
     small {
         display: block;
         font-size: 0.9rem;
-        color: #777;
+        color: $text-footer;
         font-style: italic;
     }
 }
@@ -145,14 +175,14 @@
 #carouselTestimonial .carousel-control-prev-icon:before {
     content: "\f104";
     font-family: "FontAwesome";
-    color: #fff;
+    color: $button-text;
     font-size: 20px;
 }
 
 #carouselTestimonial .carousel-control-next-icon:before {
     content: "\f105";
     font-family: "FontAwesome";
-    color: #fff;
+    color: $button-text;
     font-size: 20px;
 }
 
@@ -164,10 +194,46 @@
     outline: none;
 }
 
-.carousel-card {
-    background-color: rgba(255, 255, 255, 0.95);
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+.fees-card {
+    border-radius: 1rem;
+    box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+    padding: 0.7rem;
+}
+
+#fees .card-header {
+    background-color: $light-accent-color;
+    border-color: 1px solid black;
+}
+
+#cta {
+    background-color: $light-bg-alt-2;
+}
+
+.contact-card {
+    border-radius: 1rem;
+    box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+    padding: 0.7rem;
+    max-width: 300px; // Adjust this value to your preference
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inner-contact-card {
+    // align-items: center;
+    padding: 1.2rem;
+    background-color: $light-accent-color;
+    border-radius: 0.8rem;
+}
+
+#footer {
+    background-color: $dark-bg;
+    color: #fff;
+
+    img {
+        max-width: 200px;
+    }
+
+    a {
+        text-decoration: none;
+    }
 }

@@ -5,10 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
         <script
             src="https://kit.fontawesome.com/91eb86635d.js"
             crossorigin="anonymous"
@@ -17,14 +13,22 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-expand-lg bg-hero">
-                <div class="container d-flex justify-content-between">
+            <!--Navbar-->
+            <nav
+                id="navbar"
+                class="navbar navbar-expand-lg"
+                data-bs-theme="dark"
+            >
+                <div class="container">
+                    <!-- Logo image -->
                     <img
                         src="images/logo-fernando-red.svg"
                         alt="Fernando's Logo"
-                        width="220"
                         class="navbar-brand"
+                        id="logo-img"
                     />
+
+                    <!-- Toggler button -->
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -36,63 +40,62 @@
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
+                    <!-- Menu items -->
                     <div
-                        class="collapse navbar-collapse justify-content-end text-center"
+                        class="collapse navbar-collapse justify-content-end"
                         id="navbar-menu"
                     >
                         <ul class="navbar-nav nav-underline">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
+                                <a class="nav-link" href="#home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
+                                <a class="nav-link" href="#transform"
+                                    >Transform</a
+                                >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Services</a>
+                                <a class="nav-link" href="#services"
+                                    >Services</a
+                                >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Testimonials</a>
+                                <a class="nav-link" href="#testimonials"
+                                    >Testimonials</a
+                                >
                             </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#fees">Fees</a>
+                            </li> -->
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Fees</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" href="#contact">Contact</a>
                             </li>
                         </ul>
-                        <div class="col-lg-3 text-lg-end mt-3 mt-lg-0">
-                            <button type="button" class="btn btn-custom btn-lg">
+                        <!-- Menu button -->
+                        <!-- <div class="col-lg-3 text-lg-end mt-3 mt-lg-0">
+                            <button type="button" class="btn btn-custom">
                                 Book
                             </button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </nav>
-            <section class="bg-hero" id="hero">
-                <div class="container col-xxl-10 px-4 py-5">
-                    <div
-                        class="row flex-lg-row-reverse align-items-center g-5 py-5"
-                    >
-                        <div
-                            class="col-10 col-sm-8 col-lg-6 mx-auto align-self-end"
-                        >
-                            <img
-                                src="./images/fernando-hero-ph.png"
-                                class="d-block mx-lg-auto img-fluid"
-                                alt="Fernando Hero Photo"
-                                width="700"
-                                height="500"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div class="col-lg-6">
+
+            <!-- Hero section -->
+            <section id="home">
+                <div class="container px-4 py-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 order-1">
+                            <!-- Hero text -->
                             <h1
-                                class="display-5 fw-bold heading-text-dark-bg lh-1 mb-3"
+                                id="hero-head-text"
+                                class="display-3 fw-bold my-3"
                             >
                                 Hi, I'm
                                 <span class="accent-text">Fernando</span>
                             </h1>
-                            <p class="lead text-dark-bg">
+                            <p id="hero-text" class="lead mb-4">
                                 Take your career to new heights with
                                 personalized coaching tailored to mid-level
                                 managers and executives. Our experienced career
@@ -100,35 +103,40 @@
                                 professional goals and advancing your leadership
                                 skills.
                             </p>
-                            <div class="d-lg-flex justify-content-lg-start">
-                                <button
-                                    type="button"
-                                    class="btn btn-custom btn-lg px-4 me-md-2 col-12 col-md-auto"
-                                >
-                                    Learn More
-                                </button>
-                            </div>
+                            <button
+                                class="btn btn-lg btn-custom mt-1 w-100 w-lg-auto"
+                            >
+                                Learn More
+                            </button>
+                        </div>
+
+                        <!-- Hero image -->
+                        <div class="col-lg-6 order-lg-1">
+                            <img
+                                id="hero-img"
+                                src="./images/fernando-hero-ph.png"
+                                class="d-block mx-lg-auto img-fluid"
+                                alt="Fernando Hero Photo"
+                                loading="lazy"
+                            />
                         </div>
                     </div>
                 </div>
             </section>
         </header>
 
-        <section class="bg-light-one">
-            <div class="container col-xxl-10 px-4 py-5">
-                <div class="row align-items-center g-5 py-5">
-                    <div class="col-lg-6 order-2">
-                        <small
-                            class="text-body-secondary fw-semibold text-light-bg ms-1"
-                            >Ascend</small
-                        >
-                        <h2
-                            class="display-5 fw-bold heading-text-light-bg lh-1 mb-3"
-                        >
-                            Accelerate Your
+        <!-- Transform section -->
+        <section id="transform">
+            <div class="container px-4 py-5">
+                <div class="row align-items-center">
+                    <!-- Transform text -->
+                    <div class="col-lg-6">
+                        <h2 class="fw-semibold section-title">Transform</h2>
+                        <h3 class="display-6 fw-bold section-phrase">
+                            Accelerate your
                             <span class="accent-text">Growth</span>
-                        </h2>
-                        <p class="text-light-bg">
+                        </h3>
+                        <p class="lh-base mt-4">
                             Embark on a transformative journey with a seasoned
                             Career Architect who brings over a decade of
                             expertise in steering ambitious professionals to the
@@ -142,18 +150,10 @@
                             rewritten their career narratives under my
                             mentorship
                         </p>
-                        <div class="d-lg-flex justify-content-lg-start">
-                            <button
-                                type="button"
-                                class="btn btn-custom btn-lg px-4 me-md-2 col-12 col-md-auto"
-                            >
-                                Contact
-                            </button>
-                        </div>
                     </div>
-                    <div
-                        class="col-10 col-sm-8 col-lg-6 mx-auto align-self-end order-1"
-                    >
+
+                    <!-- Transform image -->
+                    <div class="col-lg-6 pt-4">
                         <img
                             src="./images/about-ph.jpg"
                             class="d-block mx-lg-auto img-fluid"
@@ -165,137 +165,139 @@
             </div>
         </section>
 
-        <section class="bg-light-two py-5" id="facts">
-            <div class="container text-center my-4">
-                <div class="row g-4">
-                    <div class="fact col-12 col-md-4">
-                        <h2 class="display-5 fw-bold">500+</h2>
-                        <p class="mt-4">Recommendations on LinkedIn</p>
+        <!-- Facts section -->
+        <section id="facts">
+            <div class="container text-center px-4 py-5">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h2 class="display-5 fw-bold accent-text">500+</h2>
+                        <p class="">Recommendations on LinkedIn</p>
                     </div>
-                    <div class="fact col-12 col-md-4">
-                        <h2 class="display-5 fw-bold">23,000+</h2>
-                        <p class="mt-4">Contacts on LinkedIn</p>
+                    <div class="col-lg-4">
+                        <h2 class="display-5 fw-bold accent-text">500+</h2>
+                        <p class="">Recommendations on LinkedIn</p>
                     </div>
-                    <div class="fact col-12 col-md-4">
-                        <h2 class="display-5 fw-bold">70+</h2>
-                        <p class="mt-4">Lorem ipsum dolor sit amet elit.</p>
+                    <div class="col-lg-4">
+                        <h2 class="display-5 fw-bold accent-text">500+</h2>
+                        <p class="">Recommendations on LinkedIn</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-light-one" id="services">
+        <!-- Services section -->
+        <section id="services">
             <div class="container px-4 py-5">
-                <small
-                    class="text-body-secondary fw-semibold text-light-bg ms-1"
-                    >Transform</small
-                >
-                <h2 class="pb-2 display-5 fw-bold heading-text-light-bg">
-                    Services
-                </h2>
-                <p class="text-light-bg">
-                    Personalized coaching services designed to elevate your
-                    leadership and career success.
-                </p>
-                <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div
-                                    class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3"
-                                >
-                                    <i class="fa-solid fa-people-pulling"></i>
-                                </div>
-                                <h5
-                                    class="card-title fw-bold fs-4 heading-text-light-bg"
-                                >
+                <div class="row text-center">
+                    <h2 class="fw-semibold section-title">Services and Fees</h2>
+                    <h3 class="display-6 fw-bold section-phrase">
+                        Craft Your Path to
+                        <span class="accent-text">Success</span>
+                    </h3>
+                    <p class="lh-base">
+                        Personalized coaching services designed to elevate your
+                        leadership and career success.
+                    </p>
+                </div>
+
+                <!-- Services Cards -->
+                <div class="row g-4 justify-content-center mt-3">
+                    <div class="col-md-6 col-lg-5 col-xl-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body inner-service-card">
+                                <span class="service-pricing">
+                                    <span>
+                                        $600 <small>/ 12 sessions</small>
+                                    </span>
+                                </span>
+                                <h5 class="card-title fw-bold fs-4">
                                     Career Coach
                                 </h5>
-                                <p class="card-text lead text-light-bg fs-6">
+                                <h6 class="card-subtitle mt-3">
                                     Navigate and Advance Your Career
-                                </p>
+                                </h6>
+                                <ul class="list-group mt-3 d-flex flex-column">
+                                    <li class="service-feature-item">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        Personalized Career Pathways: Tailor a
+                                        career plan that aligns with your skills
+                                        and aspirations.
+                                    </li>
+                                    <li class="service-feature-item mt-3">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        Professional Branding: Build and polish
+                                        your personal brand for the job market.
+                                    </li>
+                                    <li class="service-feature-item mt-3">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        Skill Development: Identify and enhance
+                                        critical skills for career progression.
+                                    </li>
+                                </ul>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    Personalized Career Pathways: Tailor a
-                                    career plan that aligns with your skills and
-                                    aspirations.
-                                </li>
-                                <li class="list-group-item">
-                                    Professional Branding: Build and polish your
-                                    personal brand for the job market.
-                                </li>
-                                <li class="list-group-item">
-                                    Skill Development: Identify and enhance
-                                    critical skills for career progression.
-                                </li>
-                            </ul>
-                            <!-- <div class="card-body">
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div> -->
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div
-                                    class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3"
-                                >
-                                    <i class="fa-solid fa-briefcase"></i>
-                                </div>
-                                <h5
-                                    class="card-title fw-bold fs-4 heading-text-light-bg"
-                                >
+                    <div class="col-md-6 col-lg-5 col-xl-4">
+                        <div class="card service-card h-100">
+                            <div class="card-body inner-service-card">
+                                <span class="service-pricing">
+                                    <span>
+                                        $1200 <small>/ 12 sessions</small>
+                                    </span>
+                                </span>
+                                <h5 class="card-title fw-bold fs-4">
                                     Executive Coach
                                 </h5>
-                                <p class="card-text lead text-light-bg fs-6">
+                                <h6 class="card-subtitle mt-3">
                                     Lead with Confidence and Vision
-                                </p>
+                                </h6>
+                                <ul
+                                    class="service-features list-group mt-3 d-flex flex-column"
+                                >
+                                    <li class="service-feature-item">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        Personalized Career Pathways: Tailor a
+                                        career plan that aligns with your skills
+                                        and aspirations.
+                                    </li>
+                                    <li class="service-feature-item mt-3">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        Professional Branding: Build and polish
+                                        your personal brand for the job market.
+                                    </li>
+                                    <li class="service-feature-item mt-3">
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        Skill Development: Identify and enhance
+                                        critical skills for career progression.
+                                    </li>
+                                </ul>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    Personalized Career Pathways: Tailor a
-                                    career plan that aligns with your skills and
-                                    aspirations.
-                                </li>
-                                <li class="list-group-item">
-                                    Professional Branding: Build and polish your
-                                    personal brand for the job market.
-                                </li>
-                                <li class="list-group-item">
-                                    Skill Development: Identify and enhance
-                                    critical skills for career progression.
-                                </li>
-                            </ul>
-                            <!-- <div class="card-body">
-                                <a href="#" class="card-link">Card link</a>
-                                <a href="#" class="card-link">Another link</a>
-                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="testimonials" class="bg-light-two">
-            <div class="container px-4 py-5 bg">
-                <small
-                    class="text-body-secondary fw-semibold text-light-bg ms-1"
-                    >Trust</small
-                >
-                <h2 class="pb-2 display-5 fw-bold heading-text-light-bg">
-                    Testimonials
-                </h2>
-                <p class="text-light-bg">
-                    Read what our clients have to say about us
-                </p>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
+        <!-- Testimonials section -->
+        <section id="testimonials">
+            <div class="container px-4 py-5">
+                <div class="row text-center">
+                    <h2 class="fw-semibold section-title">Testimonials</h2>
+                    <h3 class="display-6 fw-bold section-phrase">
+                        Transforming
+                        <span class="accent-text"> Visions </span> into
+                        Achievements
+                    </h3>
+                    <p class="lh-base">
+                        Read what the clients have to say about me
+                    </p>
+                </div>
+
+                <!-- Testimonials carousel -->
+                <div class="row mt-3">
+                    <div class="col-lg-8 mx-auto testimonial-carousel">
                         <div
-                            class="carousel slide pb-4 carousel-card shadow-sm"
+                            class="carousel slide pb-4 inner-testimonial-carousel"
                             id="carouselTestimonial"
                         >
                             <div class="carousel-indicators">
@@ -429,91 +431,75 @@
             </div>
         </section>
 
-        <section id="fees" class="bg-light-one pb-5">
-            <div class="container px-4 py-5 bg">
-                <small
-                    class="text-body-secondary fw-semibold text-light-bg ms-1"
-                    >Advance</small
-                >
-                <h2 class="pb-2 display-5 fw-bold heading-text-light-bg">
-                    Fees
-                </h2>
-                <p class="text-light-bg">
-                    Choose the plan that best supports your career ascent – each
-                    step brings you closer to your goals.
-                </p>
-            </div>
+        <!-- Contact section -->
+        <section id="contact">
+            <div class="container px-4 py-5">
+                <div class="row text-center justify-content-center">
+                    <h2 class="fw-semibold section-title">Contact</h2>
+                    <h3 class="display-6 fw-bold section-phrase">
+                        <span class="accent-text">Embark</span> on Your
+                        Leadership Journey
+                    </h3>
+                    <p class="lh-base">
+                        Embrace leadership excellence with our tailored
+                        coaching, unlocking your potential for strategic
+                        achievements. Secure your spot today and elevate your
+                        career trajectory.
+                    </p>
+                </div>
 
-            <div class="container col-sm-8">
-                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-                    <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm">
-                            <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal">Free</h4>
+                <!-- Contact cards -->
+                <div class="row text-center mt-3 g-4">
+                    <div class="col-lg-4 mw-auto">
+                        <div class="card contact-card h-100">
+                            <div class="card-body inner-contact-card">
+                                <h5>Schedule a Meeting</h5>
+                                <p>
+                                    Book a 30-minute 1-on-1 meeting to discuss
+                                    how we can enhance your leadership journey.
+                                </p>
                             </div>
-                            <div class="card-body">
-                                <h1 class="card-title">
-                                    $0<small class="fw-light">/mo</small>
-                                </h1>
-                                <ul class="list-unstyled mt-3 mb-4">
-                                    <li>Feature text goes here</li>
-                                    <li>Feature text goes here</li>
-                                    <li>Feature text goes here</li>
-                                    <li>Feature text goes here</li>
-                                </ul>
+                            <div class="card-link mt-3">
                                 <button
-                                    type="button"
-                                    class="w-100 btn btn-lg btn-custom"
+                                    class="btn btn-large btn-custom w-100 w-lg-auto"
                                 >
-                                    Book
+                                    Book an Appointment
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm">
-                            <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal">Pro</h4>
+                    <div class="col-lg-4 mw-auto">
+                        <div class="card contact-card h-100">
+                            <div class="card-body inner-contact-card">
+                                <h5>Write to Me</h5>
+                                <p>
+                                    Send us an email and we’ll get back to you
+                                    to address your coaching needs.
+                                </p>
                             </div>
-                            <div class="card-body">
-                                <h1 class="card-title">
-                                    $15<small class="fw-light">/mo</small>
-                                </h1>
-                                <ul class="list-unstyled mt-3 mb-4">
-                                    <li>Feature text goes here</li>
-                                    <li>Feature text goes here</li>
-                                    <li>Feature text goes here</li>
-                                    <li>Feature text goes here</li>
-                                </ul>
+                            <div class="card-link mt-3">
                                 <button
-                                    type="button"
-                                    class="w-100 btn btn-lg btn-custom"
+                                    class="btn btn-large btn-custom w-100 w-lg-auto"
                                 >
-                                    Get started
+                                    Send an email
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card mb-4 rounded-3 shadow-sm">
-                            <div class="card-header py-3">
-                                <h4 class="my-0 fw-normal">Enterprise</h4>
+                    <div class="col-lg-4 mw-auto">
+                        <div class="card contact-card h-100">
+                            <div class="card-body inner-contact-card">
+                                <h5>Connect on LinkedIn</h5>
+                                <p>
+                                    Reach out through LinkedIn for a direct
+                                    message and let's start a conversation.
+                                </p>
                             </div>
-                            <div class="card-body">
-                                <h1 class="card-title pricing-card-title">
-                                    $29<small class="fw-light">/mo</small>
-                                </h1>
-                                <ul class="list-unstyled mt-3 mb-4">
-                                    <li>Feature text goes here</li>
-                                    <li>Feature text goes here</li>
-                                    <li>Feature text goes here</li>
-                                    <li>Feature text goes here</li>
-                                </ul>
+                            <div class="card-link mt-3">
                                 <button
-                                    type="button"
-                                    class="w-100 btn btn-lg btn-custom"
+                                    class="btn btn-large btn-custom w-100 w-lg-auto"
                                 >
-                                    Contact us
+                                    Send a message
                                 </button>
                             </div>
                         </div>
@@ -522,118 +508,43 @@
             </div>
         </section>
 
-        <section id="contact bg-light-one">
-            <div class="container px-4 py-2 bg">
-                <small
-                    class="text-body-secondary fw-semibold text-light-bg ms-1"
-                    >Get in Touch</small
-                >
-                <h2 class="pb-2 display-5 fw-bold heading-text-light-bg">
-                    Contact
-                </h2>
-                <p class="text-light-bg">
-                    We're Here to Guide Your Career Journey
-                </p>
-            </div>
-
+        <!-- Footer section -->
+        <footer id="footer" class="footer py-3">
             <div class="container">
-                <div class="row g-4 row-cols-1 row-cols-lg-3">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div
-                                    class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3"
-                                >
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <h5
-                                    class="card-title fw-bold fs-4 heading-text-light-bg"
-                                >
-                                    Write to Me
-                                </h5>
-                                <p class="card-text lead text-light-bg fs-6">
-                                    Reach out for detailed program information,
-                                    or to ask any questions. I'm responsive to
-                                    your emails and eager to hear from you.
-                                </p>
-                                <a href="mailto:hello@fernando.io"
-                                    >hello@fernando.io</a
-                                >
-                            </div>
-                        </div>
+                <div class="row align-items-center">
+                    <div
+                        class="col-md-4 text-center text-md-start mb-3 mb-md-0"
+                    >
+                        <span>&copy; 2024 Fernando Ratkoczy</span>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div
-                                    class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3"
-                                >
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <h5
-                                    class="card-title fw-bold fs-4 heading-text-light-bg"
-                                >
-                                    Give me a Call
-                                </h5>
-                                <p class="card-text lead text-light-bg fs-6">
-                                    Prefer to speak directly? I'm ready to
-                                    discuss your career goals and how we can
-                                    support your growth.
-                                </p>
-                                <a href="tel:+15550000000">+1 (555) 000-0000</a>
-                            </div>
-                        </div>
+                    <div class="col-md-4 text-center mb-3 mb-md-0">
+                        <img
+                            src="images/logo-fernando-red.svg"
+                            alt="Fernando's Logo"
+                            class="img-fluid"
+                        />
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div
-                                    class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3"
-                                >
-                                    <i class="fa-solid fa-location-dot"></i>
-                                </div>
-                                <h5
-                                    class="card-title fw-bold fs-4 heading-text-light-bg"
-                                >
-                                    Visit my Office
-                                </h5>
-                                <p class="card-text lead text-light-bg fs-6">
-                                    Let's have a conversation about your future.
-                                    Drop by my office for a personal
-                                    consultation tailored to your ambitions.
-                                </p>
-                                <a href="mailto:hello@fernando.io"
-                                    >hello@fernando.io</a
-                                >
-                            </div>
-                        </div>
+                    <div class="col-md-4 text-center text-md-end">
+                        <a href="#" class="text-white me-2">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-white mx-2">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white ms-2">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center mt-3 d-lg-block">
+                        <span
+                            >Website by
+                            <a href="#" class="text-white">@aliersh</a>.</span
+                        >
                     </div>
                 </div>
             </div>
-        </section>
-
-        <footer
-            class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
-        >
-            <div class="col-md-4 d-flex align-items-center">
-                <a
-                    href="/"
-                    class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
-                >
-                    <svg class="bi" width="30" height="24">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                </a>
-                <span class="mb-3 mb-md-0 text-body-secondary"
-                    >© 2023 Company, Inc</span
-                >
-            </div>
-
-            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-facebook"></i>
-            </ul>
         </footer>
         <script type="module" src="scripts/main.js"></script>
     </body>
