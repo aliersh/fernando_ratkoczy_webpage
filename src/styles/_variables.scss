@@ -1,8 +1,8 @@
 // Color scheme
 $primary-color: #c62828; // Primary branding color
-$secondary-color: #121212; // Secondary-color
+$secondary-color: #121212; // Secondary color
 
-// primary
+// Primary color shades
 $primary-50: #fefbfb;
 $primary-100: #fcf1f1;
 $primary-200: #f9dfdf;
@@ -10,12 +10,12 @@ $primary-300: #f4c7c7;
 $primary-400: #eda7a7;
 $primary-500: #e58181;
 $primary-600: #dc5353;
-$primary-700: #c72929; //default
+$primary-700: $primary-color; // Default
 $primary-800: #701717;
 $primary-900: #3c0c0c;
 $primary-950: #2a0909;
 
-// secondary
+// Secondary color shades
 $secondary-50: #fbfbfb;
 $secondary-100: #f0f0f0;
 $secondary-200: #dedede;
@@ -23,50 +23,86 @@ $secondary-300: #c4c4c4;
 $secondary-400: #a2a2a2;
 $secondary-500: #7a7a7a;
 $secondary-600: #494949;
-$secondary-700: #121212; //default
+$secondary-700: $secondary-color; // Default
 $secondary-800: #080808;
 $secondary-900: #020202;
 $secondary-950: #000000;
 
-//Font family variables
-$font-primary: "Merriweather", serif; // For Headings and Titles
+// Fonts
+$font-primary: "Roboto", sans-serif; // For Headings and Titles
 $font-secondary: "Open Sans", sans-serif; // For Body and Button Text
 
+// Font styles for specific components
 $section-title-font: $font-primary;
 $section-phrase-font: $font-primary;
 $section-text-font: $font-secondary;
-$card-pricing-font: $font-primary;
-$card-pricing-small-font: $font-secondary;
-$card-title-font: $font-primary;
-$card-subtitle-font: $font-secondary;
-$card-features-font: $font-secondary;
+$card-font: $font-primary;
+$card-sub-font: $font-secondary;
+$footer-font: $font-secondary;
 
+// General color usage for components
 $accent-color: $primary-700;
 $dark-background: $secondary-700;
 $light-background-1: $secondary-100;
 $light-background-2: $secondary-50;
-$navbar-text-color: $primary-50;
-$button-text-color: $primary-50;
-$hero-heading-color: $secondary-50;
-$hero-text-color: $secondary-300;
-$section-title-color: $secondary-700;
-$section-phrase-color: $secondary-700;
-$section-text-color: $secondary-600;
-$facts-background: $primary-400;
-$card-color: $primary-400;
-$card-service-pricing-color: $primary-600;
-$card-pricing-text-color: $secondary-950;
-$card-pricing-small-color: $secondary-700;
-$card-title-color: $secondary-900;
-$card-subtitle-color: $secondary-700;
-$card-features-color: $secondary-600;
-$testimonial-carousel-color: $primary-600;
-$testimonial-text: $secondary-700;
-$testimonial-name: $secondary-800;
-$testimonial-position: $secondary-600;
-$carousel-dot-inactive-color: $primary-color;
-$carousel-dot-active-color: $secondary-600;
-$carousel-arrow-bg-active-color: $primary-color;
-$carousel-arrow-bg-inactive-color: $secondary-500;
-$carousel-arrow-inactive-color: $secondary-300;
-$carousel-arrow-active-color: $secondary-50;
+$text-color-light: $primary-50;
+$text-color-dark: $secondary-950;
+
+// Specific Component Colors
+
+// Navbar
+$navbar-colors: (
+    "text": $text-color-light,
+);
+
+// Buttons
+$button-colors: (
+    "text": $text-color-light,
+);
+
+// Hero Section
+$hero-colors: (
+    "heading": $secondary-50,
+    "text": $secondary-300,
+);
+
+// Sections
+$section-colors: (
+    "title": $secondary-600,
+    "phrase": $secondary-700,
+    "text": $secondary-600,
+);
+
+// Cards
+$card-colors: (
+    "background": $primary-100,
+    "pricing": $primary-500,
+    "title": $secondary-900,
+    "subtitle": $secondary-700,
+    "features": $secondary-600,
+    "pricing-text": $text-color-dark,
+    "pricing-small": $secondary-700,
+);
+
+// Testimonials
+$testimonial-colors: (
+    "carousel": $primary-100,
+    "text": $secondary-700,
+    "name": $secondary-800,
+    "position": $secondary-600,
+);
+
+// Carousel
+$carousel-colors: (
+    "dot-inactive": $primary-color,
+    "dot-active": $secondary-600,
+    "arrow-bg-active": $primary-color,
+    "arrow-bg-inactive": $secondary-500,
+    "arrow-inactive": $secondary-300,
+    "arrow-active": $secondary-50,
+);
+
+// Footer
+$footer-colors: (
+    "dev-contact": $secondary-500
+)

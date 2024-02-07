@@ -1,3 +1,4 @@
+// Global Styles
 h1,
 h2,
 h3,
@@ -7,17 +8,63 @@ h6 {
     letter-spacing: 1px;
 }
 
-#navbar {
-    background-color: $dark-background;
+//Overall styles
+
+// Button Custom Styles
+.btn-custom {
+    background-color: $accent-color;
+    font-family: $font-secondary;
+    color: map-get($button-colors, "text");
+
+    @media (min-width: 992px) {
+        width: auto !important;
+    }
 }
 
+// Accent Text
+.accent-text {
+    color: $accent-color;
+}
+
+// Icons
+
+i {
+    color: $accent-color;
+}
+
+// Section Titles and Texts
+.section-title {
+    font-family: $font-primary;
+    font-weight: 600;
+    color: map-get($section-colors, "title");
+}
+
+.section-phrase {
+    font-family: $font-primary;
+    font-weight: 700;
+    color: map-get($section-colors, "phrase");
+}
+
+.section-text {
+    font-family: $font-secondary;
+    color: map-get($section-colors, "text");
+}
+
+// Specific section styles
+
+// Logo Image
 #logo-img {
     max-width: 220px;
 }
 
+// Navbar Styles
+#navbar {
+    background-color: $dark-background;
+}
+
 .nav-link {
     font-family: $font-secondary;
-    color: $navbar-text-color;
+    color: map-get($navbar-colors, "text");
 
     &:hover {
         color: $accent-color;
@@ -28,85 +75,73 @@ h6 {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-.btn-custom {
-    //Custom style for buttons
-    background-color: $accent-color;
-    font-family: $font-secondary;
-    color: $button-text-color;
-    @media (min-width: 992px) {
-        width: auto !important; //Override w-100 bootstrap class
-    }
-}
-
+// Hero Section Styles
 #home {
     background-color: $dark-background;
 }
 
 #hero-head-text {
     font-family: $font-primary;
-    color: $hero-heading-color;
-}
-
-.accent-text {
-    color: $accent-color;
+    color: map-get($hero-colors, "heading");
+    font-weight: 700;
 }
 
 #hero-text {
     font-family: $font-secondary;
-    color: $hero-text-color;
+    color: map-get($hero-colors, "text");
 }
 
 #hero-img {
     width: 700px;
 }
 
-#transform {
-    background-color: $light-background-1;
-}
+// Transform Section
+// #transform {
+//     background-color: $light-background-1; //TODO: Recheck backgrounds
+// }
 
-.section-title {
-    font-family: $font-primary;
-    font-weight: 600;
-    color: $section-title-color;
-}
-
-.section-phrase {
-    font-family: $section-phrase-font;
-    font-weight: 700;
-    color: $section-phrase-color;
-}
-
-.section-text {
-    font-family: $section-text-font;
-    color: $section-text-color;
-    line-height: normal; // FIXME: Check line height was lh-base on bootstrap
-}
-
+// Facts Section
 #facts {
-    background-color: $facts-background;
+    background-color: map-get($card-colors, "background");
     font-family: $font-secondary;
 }
 
-.service-card {
+// Service/Contact Card Styles
+.service-card,
+.contact-card {
     border-radius: 1rem;
     box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
     padding: 0.7rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.inner-service-card {
+.contact-card {
+    max-width: 300px;
+}
+
+.inner-service-card, .inner-contact-card {
     padding: 1.2rem;
-    padding-top: 4.5rem;
-    background-color: $card-color;
+    background-color: map-get($card-colors, 'background');
     border-radius: 0.8rem;
 }
 
+.inner-service-card {
+    padding-top: 4.5rem;
+}
+
+.inner-contact-card {
+    padding-top: 1.2rem;
+}
+
 .service-pricing {
-    font-family: $card-pricing-font;
-    color: $card-pricing-text-color;
+    font-family: $font-primary;
+    color: map-get($card-colors, "pricing-text");
     position: absolute;
     top: 25;
     right: 11;
-    background-color: $card-service-pricing-color;
+    background-color: map-get($card-colors, "pricing");
     border-radius: 99rem 0 0 99rem;
     display: flex;
     align-items: center;
@@ -115,32 +150,31 @@ h6 {
     font-weight: 600;
 }
 
-.service-pricing .small {
-    font-family: $card-pricing-small-font;
-    color: $card-pricing-small-color;
-    font-size: 0.75rem;
+.service-pricing small {
+    font-family: $font-secondary;
+    color: map-get($card-colors, "pricing-small");
+    font-size: 0.9rem;
     margin-left: 0.25rem;
 }
 
+// Card texts Styles
 .card-title {
-    font-family: $card-title-font;
-    color: $card-title-color;
+    font-family: $font-primary;
+    color: map-get($card-colors, "title");
+    font-weight: 700;
 }
 
 .card-subtitle {
-    font-family: $card-subtitle-font;
-    color: $card-subtitle-color;
+    font-family: $font-secondary;
+    color: map-get($card-colors, "subtitle");
 }
 
 .card-features {
-    font-family: $card-features-font;
-    color: $card-features-color;
+    font-family: $font-secondary;
+    color: map-get($card-colors, "features");
 }
 
-i {
-    color: $accent-color;
-}
-
+// Testimonial Carousel Styles
 .testimonial-carousel {
     border-radius: 1rem;
     box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
@@ -149,18 +183,18 @@ i {
 
 .inner-testimonial-carousel {
     padding: 1.2rem;
-    background-color: $testimonial-carousel-color;
+    background-color: map-get($testimonial-colors, "carousel");
     border-radius: 0.8rem;
 }
 
 .testimonial-text {
     line-height: 1.6;
-    color: $testimonial-text;
+    color: map-get($testimonial-colors, "text");
 }
 
 .testimonial-footer {
     strong {
-        color: $testimonial-name;
+        color: map-get($testimonial-colors, "name");
         font-weight: 600;
         font-size: 1.25rem;
     }
@@ -168,7 +202,7 @@ i {
     small {
         display: block;
         font-size: 0.9rem;
-        color: $testimonial-position;
+        color: map-get($testimonial-colors, "position");
         font-style: italic;
     }
 }
@@ -177,11 +211,11 @@ i {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: $carousel-dot-inactive-color;
+    background-color: map-get($carousel-colors, "dot-inactive");
 }
 
 #carouselTestimonial .carousel-indicators .active {
-    background-color: $carousel-dot-active-color;
+    background-color: map-get($carousel-colors, "dot-active");
 }
 
 #carouselTestimonial .carousel-control-prev,
@@ -189,7 +223,7 @@ i {
     width: 40px;
     height: 40px;
     margin: auto 30px;
-    background-color: $carousel-arrow-bg-inactive-color;
+    background-color: map-get($carousel-colors, "arrow-bg-inactive");
     border-radius: 50%;
 }
 
@@ -198,62 +232,35 @@ i {
     background-image: none;
 }
 
+#carouselTestimonial .carousel-control-prev-icon:before,
+#carouselTestimonial .carousel-control-next-icon:before {
+    font-family: "FontAwesome";
+    font-size: 20px;
+}
+
 #carouselTestimonial .carousel-control-prev-icon:before {
     content: "\f104";
-    font-family: "FontAwesome";
-    color: $carousel-arrow-inactive-color;
-    font-size: 20px;
+    color: map-get($carousel-colors, "arrow-inactive");
 }
 
 #carouselTestimonial .carousel-control-next-icon:before {
     content: "\f105";
-    font-family: "FontAwesome";
-    color: $carousel-arrow-inactive-color;
-    font-size: 20px;
+    color: map-get($carousel-colors, "arrow-inactive");
 }
 
 #carouselTestimonial .carousel-control-prev:hover,
 #carouselTestimonial .carousel-control-next:hover,
 #carouselTestimonial .carousel-control-prev:focus,
 #carouselTestimonial .carousel-control-next:focus {
-    background-color: $carousel-arrow-active-color;
+    background-color: map-get($carousel-colors, "arrow-active");
     outline: none;
 }
 
-// .fees-card {
-//     border-radius: 1rem;
-//     box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
-//     padding: 0.7rem;
-// }
-
-// #fees .card-header {
-//     background-color: $light-accent-color;
-//     border-color: 1px solid black;
-// }
-
-// #cta {
-//     background-color: $light-bg-alt-2;
-// }
-
-.contact-card {
-    border-radius: 1rem;
-    box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
-    padding: 0.7rem;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.inner-contact-card {
-    // align-items: center;
-    padding: 1.2rem;
-    background-color: $card-color;
-    border-radius: 0.8rem;
-}
-
+// Footer Styles
 #footer {
     background-color: $dark-background;
     color: #fff;
+    font-family: $footer-font;
 
     img {
         max-width: 200px;
@@ -262,4 +269,13 @@ i {
     a {
         text-decoration: none;
     }
+
+    i {
+        font-size: 1.5rem;
+    }
+
+    .dev-contact {
+        color: map-get($footer-colors, dev-contact)
+    }
+
 }
