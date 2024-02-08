@@ -32,7 +32,14 @@ i {
     color: $accent-color;
 }
 
-// Section Titles and Texts
+// Section styles
+
+.main-section {
+    @media (min-width: 992px) {
+        min-height: 80vh;
+    }
+}
+
 .section-title {
     font-family: $font-primary;
     font-weight: 600;
@@ -89,6 +96,7 @@ i {
 #hero-text {
     font-family: $font-secondary;
     color: map-get($hero-colors, "text");
+    font-weight: 400;
 }
 
 #hero-img {
