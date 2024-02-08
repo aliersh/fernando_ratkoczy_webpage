@@ -75,8 +75,8 @@ $section-colors: (
 
 // Cards
 $card-colors: (
-    "background": $primary-100,
-    "pricing": $primary-500,
+    "background": $secondary-100,
+    "pricing": $primary-400,
     "title": $secondary-900,
     "subtitle": $secondary-700,
     "features": $secondary-600,
@@ -84,16 +84,12 @@ $card-colors: (
     "pricing-small": $secondary-700,
 );
 
-// Testimonials
-$testimonial-colors: (
-    "carousel": $primary-100,
+// Carousel
+$carousel-colors: (
     "text": $secondary-700,
     "name": $secondary-800,
     "position": $secondary-600,
-);
-
-// Carousel
-$carousel-colors: (
+    "background": $secondary-200,
     "dot-inactive": $primary-color,
     "dot-active": $secondary-600,
     "arrow-bg-active": $primary-color,
@@ -104,5 +100,5 @@ $carousel-colors: (
 
 // Footer
 $footer-colors: (
-    "dev-contact": $secondary-500
-)
+    "dev-contact": $secondary-500,
+);
