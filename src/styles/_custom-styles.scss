@@ -95,11 +95,6 @@ i {
     width: 700px;
 }
 
-// Transform Section
-// #transform {
-//     background-color: $light-background-1; //TODO: Recheck backgrounds
-// }
-
 // Facts Section
 #facts {
     background-color: map-get($card-colors, "background");
@@ -121,9 +116,10 @@ i {
     max-width: 300px;
 }
 
-.inner-service-card, .inner-contact-card {
+.inner-service-card,
+.inner-contact-card {
     padding: 1.2rem;
-    background-color: map-get($card-colors, 'background');
+    background-color: map-get($card-colors, "background");
     border-radius: 0.8rem;
 }
 
@@ -183,6 +179,7 @@ i {
     border-radius: 1rem;
     box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
     padding: 0.7rem;
+    max-width: 700px;
 }
 
 .inner-testimonial-carousel {
@@ -194,6 +191,11 @@ i {
 .testimonial-text {
     line-height: 1.6;
     color: map-get($carousel-colors, "text");
+    margin: auto;
+
+    @media (min-width: 768) {
+        max-width: 75%;
+    }
 }
 
 .testimonial-footer {
@@ -279,7 +281,6 @@ i {
     }
 
     .dev-contact {
-        color: map-get($footer-colors, dev-contact)
+        color: map-get($footer-colors, dev-contact);
     }
-
 }
