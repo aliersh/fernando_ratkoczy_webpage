@@ -16,7 +16,7 @@ const navbarScroll = (targetId) => {
             top: target.offsetTop - navbarHeight,
             behavior: "smooth",
         });
-    }, 320);
+    }, 325);
 };
 
 document.querySelectorAll("a[href^='#']").forEach((anchor) => {
@@ -32,3 +32,23 @@ window.addEventListener("resize", () => {
         navbarScroll(currentSection);
     }
 });
+
+// Disable scrollspy in < md size screens
+
+const scrollSpyElm = document.querySelector('[data-bs-spy="scroll"]');
+const breakpoint = 768;
+
+const updateScrollSpy = () => {
+    if (window.innerWidth <= breakpoint) {
+        bootstrap.ScrollSpy.getInstance(scrollSpyElm).dispose();
+    } else {
+        new bootstrap.ScrollSpy(scrollSpyElm, {
+            target: "#navbar",
+            rootMargin: "0px 0px -40%",
+            smoothScroll: true,
+        });
+    }
+};
+
+window.addEventListener("resize", updateScrollSpy);
+document.addEventListener("DOMContentLoaded", updateScrollSpy);
