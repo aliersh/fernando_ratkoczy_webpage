@@ -1,7 +1,4 @@
 // Global Styles
-html {
-    scroll-padding-top: 8vh;
-}
 
 h1,
 h2,
@@ -10,6 +7,10 @@ h4,
 h5,
 h6 {
     letter-spacing: 1px;
+}
+
+body {
+    padding-top: 70px;
 }
 
 //Overall styles
@@ -71,7 +72,6 @@ i {
 // Navbar Styles
 #navbar {
     background-color: $dark-background;
-    height: 8vh;
 }
 
 .nav-link {
@@ -90,10 +90,6 @@ i {
 // Hero Section Styles
 #home {
     background-color: $dark-background;
-
-    .container {
-        margin-top: 8vh;
-    }
 }
 
 #hero-head-text {

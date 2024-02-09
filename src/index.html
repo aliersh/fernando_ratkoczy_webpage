@@ -11,73 +11,76 @@
         ></script>
         <title>Fernando Ratkoczy - Career Coach</title>
     </head>
-    <body>
+    <body data-bs-spy="scroll" data-bs-target="navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true">
         <header>
             <!--Navbar-->
-            <nav
-                id="navbar"
-                class="navbar navbar-expand-lg fixed-top"
-                data-bs-theme="dark"
-            >
+            <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
                 <div class="container">
-                    <!-- Logo image -->
                     <img
                         src="images/logo-fernando-red.svg"
                         alt="Fernando's Logo"
-                        class="navbar-brand"
+                        class="navbar-brand img-fluid"
                         id="logo-img"
                     />
-
-                    <!-- Toggler button -->
                     <button
                         class="navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#navbar-menu"
-                        aria-controls="navbar-menu"
+                        data-bs-target="#nav-menu"
+                        aria-controls="nav-menu"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
-                    <!-- Menu items -->
-                    <div
-                        class="collapse navbar-collapse justify-content-end"
-                        id="navbar-menu"
-                    >
+                    <div class="collapse navbar-collapse justify-content-end" id="nav-menu">
                         <ul class="navbar-nav nav-underline">
                             <li class="nav-item">
-                                <a class="nav-link" href="#home">Home</a>
+                                <a class="nav-link" href="#home"
+                                    ><span
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#nav-menu"
+                                        >Home</span
+                                    ></a
+                                >
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#transform"
-                                    >Transform</a
+                                    ><span
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#nav-menu"
+                                        >Transform</span
+                                    ></a
                                 >
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#services"
-                                    >Services</a
+                                    ><span
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#nav-menu"
+                                        >Services & Fees</span
+                                    ></a
                                 >
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#testimonials"
-                                    >Testimonials</a
+                                    ><span
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#nav-menu"
+                                        >Testimonials</span
+                                    ></a
                                 >
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" href="#fees">Fees</a>
-                            </li> -->
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact">Contact</a>
+                                <a class="nav-link" href="#contact"
+                                    ><span
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#nav-menu"
+                                        >Contact</span
+                                    ></a
+                                >
                             </li>
                         </ul>
-                        <!-- Menu button -->
-                        <!-- <div class="col-lg-3 text-lg-end mt-3 mt-lg-0">
-                            <button type="button" class="btn btn-custom">
-                                Book
-                            </button>
-                        </div> -->
                     </div>
                 </div>
             </nav>
@@ -123,18 +126,23 @@
         </header>
 
         <!-- Transform section -->
-        <section id="transform" class="main-section d-lg-flex align-items-lg-center">
+        <section
+            id="transform"
+            class="main-section d-lg-flex align-items-lg-center"
+        >
             <div class="container px-4 py-5">
                 <div class="row">
                     <!-- Transform text -->
-                    <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <div
+                        class="col-lg-6 d-flex flex-column justify-content-center"
+                    >
                         <div class="text-center text-lg-start">
                             <h2 class="section-title">Transform</h2>
                             <h3 class="display-6 section-phrase">
                                 Accelerate your
                                 <span class="accent-text">Growth</span>
                             </h3>
-                        </div class="text-center text-lg-start">
+                        </div>
                         <p class="mt-4 section-text lead">
                             Embark on a transformative journey with a seasoned
                             Career Architect who brings over a decade of
@@ -200,7 +208,9 @@
                 </div>
 
                 <!-- Services Cards -->
-                <div class="row g-4 d-lg-flex justify-content-center align-items-lg-center mt-3">
+                <div
+                    class="row g-4 d-lg-flex justify-content-center align-items-lg-center mt-3"
+                >
                     <div class="col-md-6 col-lg-5 col-xl-4">
                         <div class="card service-card h-100">
                             <div class="card-body inner-service-card">
@@ -209,9 +219,7 @@
                                         $600 <small>/ 12 sessions</small>
                                     </span>
                                 </span>
-                                <h5 class="card-title fs-4">
-                                    Career Coach
-                                </h5>
+                                <h5 class="card-title fs-4">Career Coach</h5>
                                 <h6 class="card-subtitle mt-3">
                                     Navigate and Advance Your Career
                                 </h6>
@@ -246,9 +254,7 @@
                                         $1200 <small>/ 12 sessions</small>
                                     </span>
                                 </span>
-                                <h5 class="card-title fs-4">
-                                    Executive Coach
-                                </h5>
+                                <h5 class="card-title fs-4">Executive Coach</h5>
                                 <h6 class="card-subtitle mt-3">
                                     Lead with Confidence and Vision
                                 </h6>
@@ -279,8 +285,13 @@
 
                 <!-- Service footer -->
                 <div class="row text-center px-5 py-5">
-                    <p class="lead">Ready to take the next step? Let's discuss how we can elevate your career together.</p>
-                    <button class="btn btn-lg btn-custom mx-auto mt-3">Contact Me</button>
+                    <p class="lead">
+                        Ready to take the next step? Let's discuss how we can
+                        elevate your career together.
+                    </p>
+                    <button class="btn btn-lg btn-custom mx-auto mt-3">
+                        Contact Me
+                    </button>
                 </div>
             </div>
         </section>
@@ -437,8 +448,12 @@
                 </div>
 
                 <div class="row text-center px-5 py-5">
-                    <p class="lead">See real success stories from my clients on LinkedIn</p>
-                    <button class="btn btn-lg btn-custom mx-auto mt-3">Read Recommendations</button>
+                    <p class="lead">
+                        See real success stories from my clients on LinkedIn
+                    </p>
+                    <button class="btn btn-lg btn-custom mx-auto mt-3">
+                        Read Recommendations
+                    </button>
                 </div>
             </div>
         </section>
