@@ -5,66 +5,90 @@ if (module.hot) {
     module.hot.accept();
 }
 
-// Adjustment scroll for fixed top navbar
-
-const navbarScroll = (targetId) => {
+// Function to adjust scroll position for fixed navbar
+const adjustScrollNavbar = (targetId) => {
     setTimeout(() => {
         const navbarHeight = document.querySelector(".navbar").offsetHeight;
-        const target = document.querySelector(targetId);
+        const targetElement = document.querySelector(targetId);
 
-        window.scroll({
-            top: target.offsetTop - navbarHeight,
-            behavior: "smooth",
-        });
-    }, 325); // Time out to wait until calculate the height of the element
+        if (targetElement) {
+            window.scroll({
+                top: targetElement.offsetTop - navbarHeight,
+                behavior: "smooth",
+            });
+        }
+    }, 325);
 };
 
-document.querySelectorAll("a[href^='#']").forEach((anchor) => {
-    anchor.addEventListener("click", (e) => {
-        e.preventDefault();
-        navbarScroll(anchor.getAttribute("href"));
+// Initialize navbar links with adjusted scroll functionality
+const initNavbarLinks = () => {
+    document.querySelectorAll("a[href^='#']").forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            adjustScrollNavbar(link.getAttribute("href"));
+
+            // Collapse navbar toggler on logo click
+            if (link.classList.contains("logo-link")) {
+                const navbarToggler = document.querySelector(".navbar-toggler");
+                if (!navbarToggler.classList.contains("collapsed")) {
+                    navbarToggler.click();
+                }
+            }
+        });
     });
-});
-
-window.addEventListener("resize", () => {
-    const currentSection = window.location.hash;
-    if (currentSection) {
-        navbarScroll(currentSection);
-    }
-});
-
-// Scrollspy function (disabled in < md size screens)
-
-const scrollSpyElm = document.querySelector('[data-bs-spy="scroll"]');
-const breakpoint = 768;
-
-const updateScrollSpy = () => {
-    if (window.innerWidth <= breakpoint) {
-        bootstrap.ScrollSpy.getInstance(scrollSpyElm).dispose();
-    } else {
-        new bootstrap.ScrollSpy(scrollSpyElm, {
-            target: "#navbar",
-            rootMargin: "0px 0px -40%",
-            smoothScroll: true,
-        });
-    }
 };
 
-window.addEventListener("resize", updateScrollSpy);
-document.addEventListener("DOMContentLoaded", updateScrollSpy);
+// Adjust scroll when window is resized
+const handleWindowResize = () => {
+    window.addEventListener("resize", () => {
+        const currentHash = window.location.hash;
+        if (currentHash) {
+            adjustScrollNavbar(currentHash);
+        }
+    });
+};
 
-// Click on any part to collapse the navbar toggle button
+// Function to initialize and update ScrollSpy based on screen size
+const initAndUpdateScrollSpy = () => {
+    const scrollSpyElement = document.querySelector('[data-bs-spy="scroll"]');
+    const breakpoint = 768;
 
-document.addEventListener("click", (e) => {
-    let isClickInsideNavbar = document
-        .getElementById("navbar")
-        .contains(e.target);
-    let navbarToggler = document.querySelector(".navbar-toggler");
+    const updateScrollSpy = () => {
+        if (window.innerWidth <= breakpoint) {
+            bootstrap.ScrollSpy.getInstance(scrollSpyElement)?.dispose();
+        } else {
+            new bootstrap.ScrollSpy(scrollSpyElement, {
+                target: "#navbar",
+                rootMargin: "0px 0px -40%",
+            });
+        }
+    };
 
-    if (
-        !isClickInsideNavbar &&
-        navbarToggler.classList.contains("collapsed") === false
-    ) {
-        navbarToggler.click();
-    }
-});
+    window.addEventListener("resize", updateScrollSpy);
+    document.addEventListener("DOMContentLoaded", updateScrollSpy);
+};
+
+// Function to collapse the navbar when clicked outside of it
+const collapseNavbarOnClickOutside = () => {
+    document.addEventListener("click", (event) => {
+        const navbarElement = document.getElementById("navbar");
+        const navbarToggler = document.querySelector(".navbar-toggler");
+
+        if (
+            !navbarElement.contains(event.target) &&
+            !navbarToggler.classList.contains("collapsed")
+        ) {
+            navbarToggler.click();
+        }
+    });
+};
+
+// Initialize all functionalities
+const init = () => {
+    initNavbarLinks();
+    handleWindowResize();
+    initAndUpdateScrollSpy();
+    collapseNavbarOnClickOutside();
+};
+
+init();
