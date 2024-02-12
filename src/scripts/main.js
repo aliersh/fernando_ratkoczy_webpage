@@ -28,7 +28,10 @@ const initNavbarLinks = () => {
             adjustScrollNavbar(link.getAttribute("href"));
 
             // Collapse navbar toggler on logo click
-            if (link.classList.contains("logo-link")) {
+            if (
+                link.classList.contains("logo-link") ||
+                link.classList.contains("nav-link")
+            ) {
                 const navbarToggler = document.querySelector(".navbar-toggler");
                 if (!navbarToggler.classList.contains("collapsed")) {
                     navbarToggler.click();
