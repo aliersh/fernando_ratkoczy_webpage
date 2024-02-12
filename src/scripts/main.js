@@ -1,5 +1,6 @@
 import "../styles/main.scss";
 import "bootstrap";
+import { ScrollSpy } from "bootstrap";
 
 if (module.hot) {
     module.hot.accept();
@@ -51,24 +52,26 @@ const handleWindowResize = () => {
     });
 };
 
-// Function to initialize and update ScrollSpy based on screen size
-const initAndUpdateScrollSpy = () => {
-    const scrollSpyElement = document.querySelector('[data-bs-spy="scroll"]');
-    const breakpoint = 768;
-
-    const updateScrollSpy = () => {
-        if (window.innerWidth <= breakpoint) {
-            bootstrap.ScrollSpy.getInstance(scrollSpyElement)?.dispose();
-        } else {
-            new bootstrap.ScrollSpy(scrollSpyElement, {
-                target: "#navbar",
-                rootMargin: "0px 0px -40%",
-            });
-        }
+// Enable scrollspy for > lg sizes'
+const enableScrollSpy = () => {
+    const scrollSpyElement = document.body;
+    const breakpoint = 992;
+    const scrollSpyConfig = {
+        target: "#navbar",
+        offset: 100,
     };
 
-    window.addEventListener("resize", updateScrollSpy);
-    document.addEventListener("DOMContentLoaded", updateScrollSpy);
+    if (window.innerWidth >= breakpoint) {
+        new ScrollSpy(scrollSpyElement, scrollSpyConfig);
+    } else {
+        const scrollSpyInstance = ScrollSpy.getInstance(scrollSpyElement);
+        if (scrollSpyInstance) {
+            scrollSpyInstance.dispose();
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", enableScrollSpy);
+    window.addEventListener("resize", enableScrollSpy);
 };
 
 // Function to collapse the navbar when clicked outside of it
@@ -90,7 +93,7 @@ const collapseNavbarOnClickOutside = () => {
 const init = () => {
     initNavbarLinks();
     handleWindowResize();
-    initAndUpdateScrollSpy();
+    enableScrollSpy();
     collapseNavbarOnClickOutside();
 };
 
