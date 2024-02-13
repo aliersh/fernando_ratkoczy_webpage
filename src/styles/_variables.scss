@@ -52,7 +52,12 @@ $text-color-dark: $secondary-950;
 
 // Navbar
 $navbar-colors: (
-    "text": $text-color-light,
+    "default-text": $text-color-light,
+    "active-text": $text-color-light,
+    "active-pill": $primary-color,
+    "hover-color": $primary-color,
+    "focus-text": $secondary-700,
+    "focus-pill": $primary-200,
 );
 
 // Buttons

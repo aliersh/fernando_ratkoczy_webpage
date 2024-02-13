@@ -58,7 +58,7 @@ const enableScrollSpy = () => {
     const breakpoint = 992;
     const scrollSpyConfig = {
         target: "#navbar",
-        offset: 100,
+        offset: 50,
     };
 
     if (window.innerWidth >= breakpoint) {

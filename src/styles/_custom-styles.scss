@@ -74,12 +74,43 @@ i {
     background-color: $dark-background;
 }
 
-.nav-link {
+#navbar .nav-link.active {
     font-family: $font-secondary;
-    color: map-get($navbar-colors, "text");
+    color: map-get($navbar-colors, "active-text");
+    background-color: map-get($navbar-colors, "active-pill");
 
     &:hover {
-        color: $accent-color;
+        &:after {
+            width: 0%;
+            background: transparent;
+        }
+    }
+}
+
+#navbar .nav-link {
+    margin: 1rem;
+    font-family: $font-secondary;
+    color: map-get($navbar-colors, "default-text");
+    position: relative;
+
+    &:after {
+        transition: all 0.5s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: ".";
+        color: transparent;
+        background: map-get($navbar-colors, "hover-color");
+        height: 1px;
+    }
+
+    &:hover {
+        &:after {
+            width: 100%;
+        }
     }
 }
 
