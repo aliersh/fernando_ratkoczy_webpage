@@ -494,11 +494,28 @@
                                 </p>
                             </div>
                             <div class="card-link mt-3">
-                                <button
-                                    class="btn btn-large btn-custom w-lg-auto"
-                                >
-                                    Book an Appointment
-                                </button>
+                                <!-- Calendly link widget begin -->
+                                <!-- FIXME:Add Fernando's calendly link-->
+                                <link
+                                    href="https://assets.calendly.com/assets/external/widget.css"
+                                    rel="stylesheet"
+                                />
+                                <script
+                                    src="https://assets.calendly.com/assets/external/widget.js"
+                                    type="text/javascript"
+                                    async
+                                ></script>
+                                <a
+                                    href=""
+                                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/ariel-diaz-borquez/30min'});return false;"
+                                    >
+                                    <button
+                                        class="btn btn-large btn-custom w-lg-auto"
+                                    >
+                                        Book an Appointment
+                                    </button>
+                                    <!-- Calendly link widget end -->
+                                </a>
                             </div>
                         </div>
                     </div>
