@@ -13,15 +13,16 @@ const adjustScrollNavbar = (targetId) => {
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-            window.scroll({
-                top: targetElement.offsetTop - navbarHeight,
+            const offsetPosition = targetElement.offsetTop - navbarHeight;
+            window.scrollTo({
+                top: offsetPosition,
                 behavior: "smooth",
             });
         }
     }, 325);
 };
 
-// Initialize navbar links with adjusted scroll functionality
+// Function to collapse the navbar when the user clicks a link
 const initNavbarLinks = () => {
     document.querySelectorAll("a[href^='#']").forEach((link) => {
         link.addEventListener("click", (event) => {
@@ -42,7 +43,7 @@ const initNavbarLinks = () => {
     });
 };
 
-// Adjust scroll when window is resized
+// // Adjust scroll when window is resized
 const handleWindowResize = () => {
     window.addEventListener("resize", () => {
         const currentHash = window.location.hash;
@@ -79,10 +80,10 @@ const collapseNavbarOnClickOutside = () => {
     document.addEventListener("click", (event) => {
         const navbarElement = document.getElementById("navbar");
         const navbarToggler = document.querySelector(".navbar-toggler");
+        const isNavbarExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
 
         if (
-            !navbarElement.contains(event.target) &&
-            !navbarToggler.classList.contains("collapsed")
+            !navbarElement.contains(event.target) && isNavbarExpanded
         ) {
             navbarToggler.click();
         }
