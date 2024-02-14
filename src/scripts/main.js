@@ -80,11 +80,10 @@ const collapseNavbarOnClickOutside = () => {
     document.addEventListener("click", (event) => {
         const navbarElement = document.getElementById("navbar");
         const navbarToggler = document.querySelector(".navbar-toggler");
-        const isNavbarExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+        const isNavbarExpanded =
+            navbarToggler.getAttribute("aria-expanded") === "true";
 
-        if (
-            !navbarElement.contains(event.target) && isNavbarExpanded
-        ) {
+        if (!navbarElement.contains(event.target) && isNavbarExpanded) {
             navbarToggler.click();
         }
     });

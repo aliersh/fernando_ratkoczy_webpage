@@ -20,9 +20,40 @@ body {
     background-color: $accent-color;
     font-family: $font-secondary;
     color: map-get($button-colors, "text");
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 
-    @media (min-width: 992px) {
-        width: auto !important;
+    @include media-breakpoint-up(lg) {
+        width: auto;
+    }
+
+    span {
+        position: relative;
+        z-index: 1;
+        transition: 0.25s ease;
+    }
+
+    &::after {
+        font-family: "FontAwesome";
+        content: "\f061";
+        position: absolute;
+        top: 50%;
+        left: 120%;
+        transform: translate(-50%, -50%);
+        transition: 0.25s ease;
+    }
+
+    &:hover {
+        background-color: $accent-color;
+        color: map-get($button-colors, "text");
+        span {
+            margin-right: 20px;
+        }
+
+        &::after {
+            left: 90%;
+        }
     }
 }
 
