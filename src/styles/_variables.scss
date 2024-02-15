@@ -91,15 +91,15 @@ $card-colors: (
 
 // Carousel
 $carousel-colors: (
-    "text": $secondary-700,
+    "text": $secondary-600,
     "name": $secondary-800,
     "position": $secondary-600,
     "background": $primary-50,
-    "dot-inactive": $primary-color,
-    "dot-active": $secondary-600,
-    "arrow-bg-active": $primary-color,
+    "dot-inactive": $secondary-400,
+    "dot-active": $primary-color,
+    "arrow-bg-active": $primary-600,
     "arrow-bg-inactive": $secondary-500,
-    "arrow-inactive": $secondary-300,
+    "arrow-inactive": $secondary-100,
     "arrow-active": $secondary-50,
 );
 

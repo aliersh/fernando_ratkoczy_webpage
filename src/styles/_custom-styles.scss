@@ -314,10 +314,36 @@ i {
     line-height: 1.6;
     color: map-get($carousel-colors, "text");
     margin: auto;
+    font-style: italic;
 
-    @media (min-width: 768) {
+    @include media-breakpoint-up(md) {
         max-width: 75%;
     }
+}
+
+.carousel-inner blockquote:before,
+.carousel-inner blockquote:after {
+    font-family: "FontAwesome";
+    content: "\201c";
+    position: absolute;
+    font-size: 50px;
+    opacity: 0.3;
+    font-style: normal;
+
+    @include media-breakpoint-down(sm) {
+        opacity: 0.1;
+    }
+}
+
+.carousel-inner blockquote:before {
+    top: 0px;
+    left: 15px;
+}
+
+.carousel-inner blockquote:after {
+    content: "\201d";
+    right: 20px;
+    bottom: 200px;
 }
 
 .testimonial-footer {
@@ -331,7 +357,10 @@ i {
         display: block;
         font-size: 0.9rem;
         color: map-get($carousel-colors, "position");
-        font-style: italic;
+    }
+
+    img {
+        max-width: 100px;
     }
 }
 
@@ -353,6 +382,7 @@ i {
     margin: auto 30px;
     background-color: map-get($carousel-colors, "arrow-bg-inactive");
     border-radius: 50%;
+    transition: transform 0.3s ease;
 }
 
 #carouselTestimonial .carousel-control-prev-icon,
@@ -380,8 +410,15 @@ i {
 #carouselTestimonial .carousel-control-next:hover,
 #carouselTestimonial .carousel-control-prev:focus,
 #carouselTestimonial .carousel-control-next:focus {
-    background-color: map-get($carousel-colors, "arrow-active");
+    background-color: map-get($carousel-colors, "arrow-bg-active");
     outline: none;
+    transform: scale(1.2);
+
+    @include media-breakpoint-down(md) {
+        background-color: map-get($carousel-colors, "arrow-bg-inactive");
+        transform: scale(1);
+        opacity: 0.5;
+    }
 }
 
 // Contact styles
@@ -405,7 +442,7 @@ i {
     }
 
     i {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
 
     .dev-contact {
