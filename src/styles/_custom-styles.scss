@@ -13,7 +13,53 @@ body {
     padding-top: 70px;
 }
 
-//Overall styles
+// Accent Text
+.accent-text {
+    color: $accent-color;
+}
+
+// Icons
+
+i {
+    color: $accent-color;
+}
+
+// Mixin for common button hover styles
+@mixin button-hover-styles($applyMargin: false) {
+    background-color: $accent-color;
+    color: map-get($button-colors, "text");
+    &:hover {
+        background-color: $accent-color;
+        color: map-get($button-colors, "text");
+
+        @if $applyMargin {
+            span {
+                margin-left: -5px;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+// Mixin for common button active styles
+@mixin button-active-styles {
+    &:not(:disabled):not(.disabled):active {
+        background-color: $accent-color;
+        color: map-get($button-colors, "text");
+        border-color: transparent;
+        opacity: 0.75;
+        transition: opacity 0.25s ease;
+    }
+}
+
+// Mixin for button icons
+@mixin button-icon($icon) {
+    @include media-breakpoint-up(lg) {
+        &::after {
+            content: $icon;
+        }
+    }
+}
 
 // Button Custom Styles
 .btn-custom {
@@ -26,13 +72,11 @@ body {
 
     @include media-breakpoint-up(lg) {
         width: auto;
-
         span {
             position: relative;
             z-index: 1;
             transition: 0.25s ease;
         }
-
         &::after {
             font-family: "FontAwesome";
             position: absolute;
@@ -42,106 +86,62 @@ body {
             transition: 0.25s ease;
         }
 
-        &:hover {
-            background-color: $accent-color;
-            color: map-get($button-colors, "text");
-            span {
-                margin-left: -5px;
-                margin-right: 20px;
-            }
+        @include button-hover-styles(true); // Apply margin styles on lg screens
 
+        &:hover {
             &::after {
                 left: 90%;
             }
         }
 
-        &:not(:disabled):not(.disabled):active {
-            //Override bootstrap style with specificity
-            background-color: $accent-color;
-            color: map-get($button-colors, "text");
-            border-color: transparent;
-            opacity: 0.75;
-            transition: opacity 0.25s ease;
-        }
+        @include button-active-styles;
     }
 
     @include media-breakpoint-down(md) {
-        &:hover {
-            background-color: $accent-color;
-            color: map-get($button-colors, "text");
-        }
-
-        &:not(:disabled):not(.disabled):active {
-            background-color: $accent-color;
-            color: map-get($button-colors, "text");
-            border-color: transparent;
-            opacity: 0.75;
-            transition: opacity 0.25s ease;
-        }
+        @include button-hover-styles; // Do not apply margin styles on small screens
+        @include button-active-styles;
     }
 }
 
+// Button icon styles
 .btn-icon-arrow-down {
-    @include media-breakpoint-up(lg) {
-        &::after {
-            content: "\f063";
-        }
-    }
+    @include button-icon("\f063");
 }
 
 .btn-icon-external-link {
-    @include media-breakpoint-up(lg) {
-        &::after {
-            content: "\f08e";
-        }
-    }
+    @include button-icon("\f08e");
 }
 
 .btn-icon-handshake {
-    @include media-breakpoint-up(lg) {
-        &::after {
-            content: "\f4c4";
-        }
-    }
+    @include button-icon("\f4c4");
 }
 
-// Accent Text
-.accent-text {
-    color: $accent-color;
+// Mixin for section typography
+@mixin section-typography($font-family, $font-weight, $color-key) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    color: map-get($section-colors, $color-key);
 }
-
-// Icons
-
-i {
-    color: $accent-color;
-}
-
-// Section styles
 
 .main-section {
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(lg) {
         min-height: 80vh;
     }
 }
 
 .section-title {
-    font-family: $font-primary;
-    font-weight: 600;
-    color: map-get($section-colors, "title");
+    @include section-typography($font-primary, 600, "title");
 }
 
 .section-phrase {
-    font-family: $font-primary;
-    font-weight: 700;
-    color: map-get($section-colors, "phrase");
+    @include section-typography($font-primary, 700, "phrase");
 }
 
 .section-text {
-    font-family: $font-secondary;
-    color: map-get($section-colors, "text");
+    @include section-typography($font-secondary, normal, "text");
 }
 
-// Specific section styles
+// Navbar
 
 // Logo Image
 #logo-img {
@@ -149,29 +149,16 @@ i {
 }
 
 // Navbar Styles
-#navbar {
-    background-color: $dark-background;
-}
-
-#navbar .nav-link.active {
-    font-family: $font-secondary;
-    color: map-get($navbar-colors, "active-text");
-    background-color: map-get($navbar-colors, "active-pill");
-
-    &:hover {
-        &:after {
-            width: 0%;
-            background: transparent;
-        }
-    }
-}
-
-#navbar .nav-link {
+// Mixin for common nav link styles
+@mixin nav-link-style($font-family, $color) {
     margin: 1rem;
-    font-family: $font-secondary;
-    color: map-get($navbar-colors, "default-text");
+    font-family: $font-family;
+    color: $color;
     position: relative;
+}
 
+// Mixin for pseudo-element in nav link
+@mixin nav-link-after($background-color, $initial-width: 0%) {
     &:after {
         transition: all 0.5s;
         position: absolute;
@@ -179,16 +166,45 @@ i {
         left: 0;
         right: 0;
         margin: auto;
-        width: 0%;
+        width: $initial-width;
         content: ".";
         color: transparent;
-        background: map-get($navbar-colors, "hover-color");
+        background: $background-color;
         height: 1px;
     }
+}
+
+#navbar {
+    background-color: $dark-background;
+}
+
+#navbar .nav-link {
+    @include nav-link-style(
+        $font-secondary,
+        map-get($navbar-colors, "default-text")
+    );
+
+    @include nav-link-after(map-get($navbar-colors, "hover-color"));
 
     &:hover {
         &:after {
             width: 100%;
+        }
+    }
+}
+
+#navbar .nav-link.active {
+    @include nav-link-style(
+        $font-secondary,
+        map-get($navbar-colors, "active-text")
+    );
+    background-color: map-get($navbar-colors, "active-pill");
+
+    @include nav-link-after(transparent);
+
+    &:hover {
+        &:after {
+            width: 0%;
         }
     }
 }
@@ -198,20 +214,23 @@ i {
 }
 
 // Hero Section Styles
+// Mixin for hero text styles
+@mixin hero-text-style($font-family, $color-key, $font-weight) {
+    font-family: $font-family;
+    color: map-get($hero-colors, $color-key);
+    font-weight: $font-weight;
+}
+
 #home {
     background-color: $dark-background;
 }
 
 #hero-head-text {
-    font-family: $font-primary;
-    color: map-get($hero-colors, "heading");
-    font-weight: 700;
+    @include hero-text-style($font-primary, "heading", 700);
 }
 
 #hero-text {
-    font-family: $font-secondary;
-    color: map-get($hero-colors, "text");
-    font-weight: 400;
+    @include hero-text-style($font-secondary, "text", 400);
 }
 
 #hero-img {
@@ -225,36 +244,26 @@ i {
 }
 
 // Service/Contact Card Styles
-.service-card,
-.contact-card {
+// Mixin for common card styles
+@mixin card-styles($max-width) {
     border-radius: 1rem;
     box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
     padding: 0.7rem;
-    max-width: 400px;
+    max-width: $max-width;
     margin-left: auto;
     margin-right: auto;
 }
 
-.contact-card {
-    max-width: 300px;
-}
-
-.inner-service-card,
-.inner-contact-card {
+// Mixin for inner card styles
+@mixin inner-card-styles($padding-top) {
     padding: 1.2rem;
+    padding-top: $padding-top;
     background-color: map-get($card-colors, "background");
     border-radius: 0.8rem;
 }
 
-.inner-service-card {
-    padding-top: 4.5rem;
-}
-
-.inner-contact-card {
-    padding-top: 1.2rem;
-}
-
-.service-pricing {
+// Mixin for service pricing styles
+@mixin service-pricing-styles {
     font-family: $font-primary;
     color: map-get($card-colors, "pricing-text");
     position: absolute;
@@ -269,45 +278,114 @@ i {
     font-weight: 600;
 }
 
-.service-pricing small {
-    font-family: $font-secondary;
-    color: map-get($card-colors, "pricing-small");
-    font-size: 0.9rem;
-    margin-left: 0.25rem;
+.service-card {
+    @include card-styles(400px);
 }
 
-// Card texts Styles
+.contact-card {
+    @include card-styles(300px);
+}
+
+.inner-service-card {
+    @include inner-card-styles(4.5rem);
+}
+
+.inner-contact-card {
+    @include inner-card-styles(1.2rem);
+}
+
+.service-pricing {
+    @include service-pricing-styles;
+
+    small {
+        font-family: $font-secondary;
+        color: map-get($card-colors, "pricing-small");
+        font-size: 0.9rem;
+        margin-left: 0.25rem;
+    }
+}
+
+// Mixin for card text styles
+@mixin card-text-styles($font-family, $color-key, $font-weight: null) {
+    font-family: $font-family;
+    color: map-get($card-colors, $color-key);
+
+    @if $font-weight != null {
+        font-weight: $font-weight;
+    }
+}
+
 .card-title {
-    font-family: $font-primary;
-    color: map-get($card-colors, "title");
-    font-weight: 700;
+    @include card-text-styles($font-primary, "title", 700);
 }
 
 .card-subtitle {
-    font-family: $font-secondary;
-    color: map-get($card-colors, "subtitle");
+    @include card-text-styles($font-secondary, "subtitle");
 }
 
 .card-features {
-    font-family: $font-secondary;
-    color: map-get($card-colors, "features");
+    @include card-text-styles($font-secondary, "features");
+}
+
+// Mixin for common carousel styles
+@mixin carousel-styles(
+    $max-width: null,
+    $padding: null,
+    $bg-color-key: null,
+    $border-radius: null
+) {
+    @if $max-width != null {
+        max-width: $max-width;
+    }
+    @if $padding != null {
+        padding: $padding;
+    }
+    @if $bg-color-key != null {
+        background-color: map-get($carousel-colors, $bg-color-key);
+    }
+    @if $border-radius != null {
+        border-radius: $border-radius;
+    }
+}
+
+// Mixin for carousel control styles
+@mixin carousel-control-styles($control-color-key, $arrow-bg-color-key) {
+    width: 40px;
+    height: 40px;
+    margin: auto 30px;
+    background-color: map-get($carousel-colors, $arrow-bg-color-key);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+
+    &:hover,
+    &:active {
+        background-color: map-get($carousel-colors, $control-color-key);
+        transform: scale(1.2);
+        outline: none;
+    }
+
+    @include media-breakpoint-down(md) {
+        background-color: map-get($carousel-colors, "arrow-bg-inactive");
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: map-get($carousel-colors, "arrow-bg-inactive");
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
 }
 
 #testimonials {
     background-color: $secondary-100;
 }
 
-// Testimonial Carousel Styles
 .testimonial-carousel {
-    border-radius: 1rem;
-    box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
-    max-width: 700px;
+    @include carousel-styles(700px, null, null, 1rem);
 }
 
 .inner-testimonial-carousel {
-    padding: 1.2rem;
-    background-color: map-get($carousel-colors, "background");
-    border-radius: 0.8rem;
+    @include carousel-styles(null, 1.2rem, "background", 0.8rem);
 }
 
 .testimonial-text {
@@ -324,7 +402,6 @@ i {
 .carousel-inner blockquote:before,
 .carousel-inner blockquote:after {
     font-family: "FontAwesome";
-    content: "\201c";
     position: absolute;
     font-size: 50px;
     opacity: 0.3;
@@ -336,6 +413,7 @@ i {
 }
 
 .carousel-inner blockquote:before {
+    content: "\201c";
     top: 0px;
     left: 15px;
 }
@@ -377,47 +455,27 @@ i {
 
 #carouselTestimonial .carousel-control-prev,
 #carouselTestimonial .carousel-control-next {
-    width: 40px;
-    height: 40px;
-    margin: auto 30px;
-    background-color: map-get($carousel-colors, "arrow-bg-inactive");
-    border-radius: 50%;
-    transition: transform 0.3s ease;
-}
+    @include carousel-control-styles("arrow-bg-active", "arrow-bg-inactive");
+    opacity: 0.9;
 
-#carouselTestimonial .carousel-control-prev-icon,
-#carouselTestimonial .carousel-control-next-icon {
-    background-image: none;
-}
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-image: none;
 
-#carouselTestimonial .carousel-control-prev-icon:before,
-#carouselTestimonial .carousel-control-next-icon:before {
-    font-family: "FontAwesome";
-    font-size: 20px;
-}
+        &:before {
+            font-family: "FontAwesome";
+            font-size: 20px;
+        }
+    }
 
-#carouselTestimonial .carousel-control-prev-icon:before {
-    content: "\f104";
-    color: map-get($carousel-colors, "arrow-inactive");
-}
+    .carousel-control-prev-icon:before {
+        content: "\f104";
+        color: map-get($carousel-colors, "arrow-inactive");
+    }
 
-#carouselTestimonial .carousel-control-next-icon:before {
-    content: "\f105";
-    color: map-get($carousel-colors, "arrow-inactive");
-}
-
-#carouselTestimonial .carousel-control-prev:hover,
-#carouselTestimonial .carousel-control-next:hover,
-#carouselTestimonial .carousel-control-prev:focus,
-#carouselTestimonial .carousel-control-next:focus {
-    background-color: map-get($carousel-colors, "arrow-bg-active");
-    outline: none;
-    transform: scale(1.2);
-
-    @include media-breakpoint-down(md) {
-        background-color: map-get($carousel-colors, "arrow-bg-inactive");
-        transform: scale(1);
-        opacity: 0.5;
+    .carousel-control-next-icon:before {
+        content: "\f105";
+        color: map-get($carousel-colors, "arrow-inactive");
     }
 }
 
@@ -430,7 +488,7 @@ i {
 // Footer Styles
 #footer {
     background-color: $dark-background;
-    color: #fff;
+    color: map-get($footer-colors, "text-color");
     font-family: $footer-font;
 
     img {
@@ -439,6 +497,7 @@ i {
 
     a {
         text-decoration: none;
+        color: inherit;
     }
 
     i {
@@ -446,6 +505,6 @@ i {
     }
 
     .dev-contact {
-        color: map-get($footer-colors, dev-contact);
+        color: map-get($footer-colors, "dev-contact");
     }
 }
