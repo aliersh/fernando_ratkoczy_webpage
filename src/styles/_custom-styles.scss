@@ -26,55 +26,82 @@ body {
 
     @include media-breakpoint-up(lg) {
         width: auto;
-    }
 
-    span {
-        position: relative;
-        z-index: 1;
-        transition: 0.25s ease;
-    }
-
-    &::after {
-        font-family: "FontAwesome";
-        position: absolute;
-        top: 50%;
-        left: 120%;
-        transform: translate(-50%, -50%);
-        transition: 0.25s ease;
-    }
-
-    &:hover {
-        background-color: $accent-color;
-        color: map-get($button-colors, "text");
         span {
-            margin-left: -5px;
-            margin-right: 20px;
+            position: relative;
+            z-index: 1;
+            transition: 0.25s ease;
         }
 
         &::after {
-            left: 90%;
+            font-family: "FontAwesome";
+            position: absolute;
+            top: 50%;
+            left: 120%;
+            transform: translate(-50%, -50%);
+            transition: 0.25s ease;
+        }
+
+        &:hover {
+            background-color: $accent-color;
+            color: map-get($button-colors, "text");
+            span {
+                margin-left: -5px;
+                margin-right: 20px;
+            }
+
+            &::after {
+                left: 90%;
+            }
+        }
+
+        &:not(:disabled):not(.disabled):active {
+            //Override bootstrap style with specificity
+            background-color: $accent-color;
+            color: map-get($button-colors, "text");
+            border-color: transparent;
+            opacity: 0.75;
+            transition: opacity 0.25s ease;
         }
     }
 
-    &:not(:disabled):not(.disabled):active {
-        //Override bootstrap style with specificity
-        background-color: $accent-color;
-        color: map-get($button-colors, "text");
-        border-color: transparent;
-        opacity: 0.75;
-        transition: opacity 0.25s ease;
+    @include media-breakpoint-down(md) {
+        &:hover {
+            background-color: $accent-color;
+            color: map-get($button-colors, "text");
+        }
+
+        &:not(:disabled):not(.disabled):active {
+            background-color: $accent-color;
+            color: map-get($button-colors, "text");
+            border-color: transparent;
+            opacity: 0.75;
+            transition: opacity 0.25s ease;
+        }
     }
 }
 
 .btn-icon-arrow-down {
-    &::after {
-        content: "\f063";
+    @include media-breakpoint-up(lg) {
+        &::after {
+            content: "\f063";
+        }
     }
 }
 
 .btn-icon-external-link {
-    &::after {
-        content: "\f08e";
+    @include media-breakpoint-up(lg) {
+        &::after {
+            content: "\f08e";
+        }
+    }
+}
+
+.btn-icon-handshake {
+    @include media-breakpoint-up(lg) {
+        &::after {
+            content: "\f4c4";
+        }
     }
 }
 
