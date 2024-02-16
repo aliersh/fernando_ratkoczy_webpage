@@ -1,6 +1,7 @@
 import "../styles/main.scss";
 import "bootstrap";
 import { ScrollSpy } from "bootstrap";
+import { CountUp } from "countup.js";
 
 if (module.hot) {
     module.hot.accept();
@@ -106,6 +107,38 @@ const collapseNavbarOnClickAndScroll = () => {
     //Event listener for scroll
     window.addEventListener("scroll", checkAndCollapseNavbar);
 };
+
+// Count up animations
+
+const countUpRecommendations = new CountUp("number-recommendations", 185, {
+    enableScrollSpy: true,
+    suffix: "+",
+});
+if (!countUpRecommendations.error) {
+    countUpRecommendations.start();
+} else {
+    console.error(countUpRecommendations.error);
+}
+
+const countUpConnections = new CountUp("number-connections", 23000, {
+    enableScrollSpy: true,
+    suffix: "+",
+});
+if (!countUpConnections.error) {
+    countUpConnections.start();
+} else {
+    console.error(countUpConnections.error);
+}
+
+const countUpSessions = new CountUp("number-sessions", 10000, {
+    enableScrollSpy: true,
+    suffix: "+",
+});
+if (!countUpSessions.error) {
+    countUpSessions.start();
+} else {
+    console.error(countUpSessions.error);
+}
 
 // Initialize all functionalities
 const init = () => {
