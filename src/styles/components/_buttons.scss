@@ -1,0 +1,53 @@
+.btn-custom {
+    background-color: $accent-color;
+    font-family: $font-secondary;
+    color: map-get($button-colors, "text");
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+        width: auto;
+        span {
+            position: relative;
+            z-index: 1;
+            transition: 0.25s ease;
+        }
+        &::after {
+            font-family: "FontAwesome";
+            position: absolute;
+            top: 50%;
+            left: 120%;
+            transform: translate(-50%, -50%);
+            transition: 0.25s ease;
+        }
+
+        @include button-hover-styles(true); // Apply margin styles on lg screens
+
+        &:hover {
+            &::after {
+                left: 90%;
+            }
+        }
+
+        @include button-active-styles;
+    }
+
+    @include media-breakpoint-down(md) {
+        @include button-hover-styles; // Do not apply margin styles on small screens
+        @include button-active-styles;
+    }
+}
+
+// Button icon styles
+.btn-icon-arrow-down {
+    @include button-icon("\f063");
+}
+
+.btn-icon-external-link {
+    @include button-icon("\f08e");
+}
+
+.btn-icon-handshake {
+    @include button-icon("\f4c4");
+}

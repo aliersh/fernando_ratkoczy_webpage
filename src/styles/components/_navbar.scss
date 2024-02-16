@@ -1,0 +1,42 @@
+#logo-img {
+    max-width: 220px;
+}
+
+#navbar {
+    background-color: $dark-background;
+}
+
+#navbar .nav-link {
+    @include nav-link-style(
+        $font-secondary,
+        map-get($navbar-colors, "default-text")
+    );
+
+    @include nav-link-after(map-get($navbar-colors, "hover-color"));
+
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+#navbar .nav-link.active {
+    @include nav-link-style(
+        $font-secondary,
+        map-get($navbar-colors, "active-text")
+    );
+    background-color: map-get($navbar-colors, "active-pill");
+
+    @include nav-link-after(transparent);
+
+    &:hover {
+        &:after {
+            width: 0%;
+        }
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

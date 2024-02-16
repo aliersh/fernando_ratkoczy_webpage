@@ -1,0 +1,15 @@
+#home {
+    background-color: $dark-background;
+}
+
+#hero-head-text {
+    @include hero-text-style($font-primary, "heading", 700);
+}
+
+#hero-text {
+    @include hero-text-style($font-secondary, "text", 400);
+}
+
+#hero-img {
+    width: 700px;
+}

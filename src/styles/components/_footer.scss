@@ -1,0 +1,22 @@
+#footer {
+    background-color: $dark-background;
+    color: map-get($footer-colors, "text-color");
+    font-family: $footer-font;
+
+    img {
+        max-width: 200px;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    i {
+        font-size: 2.5rem;
+    }
+
+    .dev-contact {
+        color: map-get($footer-colors, "dev-contact");
+    }
+}

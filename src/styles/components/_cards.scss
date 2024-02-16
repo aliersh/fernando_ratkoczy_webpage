@@ -1,0 +1,38 @@
+.service-card {
+    @include card-styles(400px);
+}
+
+.contact-card {
+    @include card-styles(300px);
+}
+
+.inner-service-card {
+    @include inner-card-styles(4.5rem);
+}
+
+.inner-contact-card {
+    @include inner-card-styles(1.2rem);
+}
+
+.service-pricing {
+    @include service-pricing-styles;
+
+    small {
+        font-family: $font-secondary;
+        color: map-get($card-colors, "pricing-small");
+        font-size: 0.9rem;
+        margin-left: 0.25rem;
+    }
+}
+
+.card-title {
+    @include card-text-styles($font-primary, "title", 700);
+}
+
+.card-subtitle {
+    @include card-text-styles($font-secondary, "subtitle");
+}
+
+.card-features {
+    @include card-text-styles($font-secondary, "features");
+}

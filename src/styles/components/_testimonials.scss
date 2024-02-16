@@ -1,0 +1,102 @@
+#testimonials {
+    background-color: $secondary-100;
+}
+
+.testimonial-carousel {
+    @include carousel-styles(700px, null, null, 1rem);
+}
+
+.inner-testimonial-carousel {
+    @include carousel-styles(null, 1.2rem, "background", 0.8rem);
+}
+
+.testimonial-text {
+    line-height: 1.6;
+    color: map-get($carousel-colors, "text");
+    margin: auto;
+    font-style: italic;
+
+    @include media-breakpoint-up(md) {
+        max-width: 75%;
+    }
+}
+
+.carousel-inner blockquote:before,
+.carousel-inner blockquote:after {
+    font-family: "FontAwesome";
+    position: absolute;
+    font-size: 50px;
+    opacity: 0.3;
+    font-style: normal;
+
+    @include media-breakpoint-down(sm) {
+        opacity: 0.1;
+    }
+}
+
+.carousel-inner blockquote:before {
+    content: "\201c";
+    top: 0px;
+    left: 15px;
+}
+
+.carousel-inner blockquote:after {
+    content: "\201d";
+    right: 20px;
+    bottom: 200px;
+}
+
+.testimonial-footer {
+    strong {
+        color: map-get($carousel-colors, "name");
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    small {
+        display: block;
+        font-size: 0.9rem;
+        color: map-get($carousel-colors, "position");
+    }
+
+    img {
+        max-width: 100px;
+    }
+}
+
+#carouselTestimonial .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: map-get($carousel-colors, "dot-inactive");
+}
+
+#carouselTestimonial .carousel-indicators .active {
+    background-color: map-get($carousel-colors, "dot-active");
+}
+
+#carouselTestimonial .carousel-control-prev,
+#carouselTestimonial .carousel-control-next {
+    @include carousel-control-styles("arrow-bg-active", "arrow-bg-inactive");
+    opacity: 0.9;
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-image: none;
+
+        &:before {
+            font-family: "FontAwesome";
+            font-size: 20px;
+        }
+    }
+
+    .carousel-control-prev-icon:before {
+        content: "\f104";
+        color: map-get($carousel-colors, "arrow-inactive");
+    }
+
+    .carousel-control-next-icon:before {
+        content: "\f105";
+        color: map-get($carousel-colors, "arrow-inactive");
+    }
+}

@@ -1,0 +1,168 @@
+// Mixin for common button hover styles
+@mixin button-hover-styles($applyMargin: false) {
+    background-color: $accent-color;
+    color: map-get($button-colors, "text");
+    &:hover {
+        background-color: $accent-color;
+        color: map-get($button-colors, "text");
+
+        @if $applyMargin {
+            span {
+                margin-left: -5px;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+// Mixin for common button active styles
+@mixin button-active-styles {
+    &:not(:disabled):not(.disabled):active {
+        background-color: $accent-color;
+        color: map-get($button-colors, "text");
+        border-color: transparent;
+        opacity: 0.75;
+        transition: opacity 0.25s ease;
+    }
+}
+
+// Mixin for button icons
+@mixin button-icon($icon) {
+    @include media-breakpoint-up(lg) {
+        &::after {
+            content: $icon;
+        }
+    }
+}
+
+// Mixin for section typography
+@mixin section-typography($font-family, $font-weight, $color-key) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    color: map-get($section-colors, $color-key);
+}
+
+// Mixin for common nav link styles
+@mixin nav-link-style($font-family, $color) {
+    margin: 1rem;
+    font-family: $font-family;
+    color: $color;
+    position: relative;
+}
+
+// Mixin for pseudo-element in nav link
+@mixin nav-link-after($background-color, $initial-width: 0%) {
+    &:after {
+        transition: all 0.5s;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: $initial-width;
+        content: ".";
+        color: transparent;
+        background: $background-color;
+        height: 1px;
+    }
+}
+
+// Mixin for hero text styles
+@mixin hero-text-style($font-family, $color-key, $font-weight) {
+    font-family: $font-family;
+    color: map-get($hero-colors, $color-key);
+    font-weight: $font-weight;
+}
+
+// Mixin for common card styles
+@mixin card-styles($max-width) {
+    border-radius: 1rem;
+    box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+    padding: 0.7rem;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Mixin for inner card styles
+@mixin inner-card-styles($padding-top) {
+    padding: 1.2rem;
+    padding-top: $padding-top;
+    background-color: map-get($card-colors, "background");
+    border-radius: 0.8rem;
+}
+
+// Mixin for service pricing styles
+@mixin service-pricing-styles {
+    font-family: $font-primary;
+    color: map-get($card-colors, "pricing-text");
+    position: absolute;
+    top: 25;
+    right: 11;
+    background-color: map-get($card-colors, "pricing");
+    border-radius: 99rem 0 0 99rem;
+    display: flex;
+    align-items: center;
+    padding: 0.625rem 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+// Mixin for card text styles
+@mixin card-text-styles($font-family, $color-key, $font-weight: null) {
+    font-family: $font-family;
+    color: map-get($card-colors, $color-key);
+
+    @if $font-weight != null {
+        font-weight: $font-weight;
+    }
+}
+
+// Mixin for common carousel styles
+@mixin carousel-styles(
+    $max-width: null,
+    $padding: null,
+    $bg-color-key: null,
+    $border-radius: null
+) {
+    @if $max-width != null {
+        max-width: $max-width;
+    }
+    @if $padding != null {
+        padding: $padding;
+    }
+    @if $bg-color-key != null {
+        background-color: map-get($carousel-colors, $bg-color-key);
+    }
+    @if $border-radius != null {
+        border-radius: $border-radius;
+    }
+}
+
+// Mixin for carousel control styles
+@mixin carousel-control-styles($control-color-key, $arrow-bg-color-key) {
+    width: 40px;
+    height: 40px;
+    margin: auto 30px;
+    background-color: map-get($carousel-colors, $arrow-bg-color-key);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+
+    &:hover,
+    &:active {
+        background-color: map-get($carousel-colors, $control-color-key);
+        transform: scale(1.2);
+        outline: none;
+    }
+
+    @include media-breakpoint-down(md) {
+        background-color: map-get($carousel-colors, "arrow-bg-inactive");
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: map-get($carousel-colors, "arrow-bg-inactive");
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

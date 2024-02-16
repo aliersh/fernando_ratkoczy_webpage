@@ -1,0 +1,17 @@
+.main-section {
+    @include media-breakpoint-up(lg) {
+        min-height: 80vh;
+    }
+}
+
+.section-title {
+    @include section-typography($font-primary, 600, "title");
+}
+
+.section-phrase {
+    @include section-typography($font-primary, 700, "phrase");
+}
+
+.section-text {
+    @include section-typography($font-secondary, normal, "text");
+}
