@@ -23,27 +23,33 @@ const adjustScrollNavbar = (targetId) => {
 };
 
 // Function to collapse the navbar when the user clicks a link
-const initNavbarLinks = () => {
+const collapseOnClick = () => {
     document.querySelectorAll("a[href^='#']").forEach((link) => {
         link.addEventListener("click", (event) => {
             event.preventDefault();
             adjustScrollNavbar(link.getAttribute("href"));
 
-            // Collapse navbar toggler on logo click
-            if (
-                link.classList.contains("logo-link") ||
-                link.classList.contains("nav-link")
-            ) {
-                const navbarToggler = document.querySelector(".navbar-toggler");
-                if (!navbarToggler.classList.contains("collapsed")) {
-                    navbarToggler.click();
+            //Check if the screen width is md or smaller
+            const screenWidth = window.innerWidth;
+            const breakpoint = 768;
+
+            if (screenWidth < breakpoint) {
+                // Collapse navbar toggler on logo click
+                if (
+                    link.classList.contains("logo-link") ||
+                    link.classList.contains("nav-link")
+                ) {
+                    const navbarToggler = document.querySelector(".navbar-toggler");
+                    if (!navbarToggler.classList.contains("collapsed")) {
+                        navbarToggler.click();
+                    }
                 }
             }
         });
     });
 };
 
-// // Adjust scroll when window is resized
+// Adjust scroll when window is resized
 const handleWindowResize = () => {
     window.addEventListener("resize", () => {
         const currentHash = window.location.hash;
@@ -101,7 +107,7 @@ const collapseNavbarOnClickAndScroll = () => {
 
 // Initialize all functionalities
 const init = () => {
-    initNavbarLinks();
+    collapseOnClick();
     handleWindowResize();
     enableScrollSpy();
     collapseNavbarOnClickAndScroll();
