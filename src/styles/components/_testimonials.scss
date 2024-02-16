@@ -21,6 +21,10 @@
     }
 }
 
+.carousel {
+    min-height: max-content;
+}
+
 .carousel-inner blockquote:before,
 .carousel-inner blockquote:after {
     font-family: "FontAwesome";
