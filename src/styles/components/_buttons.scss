@@ -37,6 +37,11 @@
         @include button-hover-styles; // Do not apply margin styles on small screens
         @include button-active-styles;
     }
+
+    &:focus-visible {
+        @include button-hover-styles;
+        outline: 3px solid red;
+    }
 }
 
 // Button icon styles

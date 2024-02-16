@@ -69,6 +69,11 @@
     height: 12px;
     border-radius: 50%;
     background-color: map-get($carousel-colors, "dot-inactive");
+    border: 2px solid transparent;
+
+    &:focus-visible {
+        border: 2px solid red;
+    }
 }
 
 #carouselTestimonial .carousel-indicators .active {
@@ -98,5 +103,9 @@
     .carousel-control-next-icon:before {
         content: "\f105";
         color: map-get($carousel-colors, "arrow-inactive");
+    }
+
+    &:focus-visible {
+        outline: 3px solid red;
     }
 }
