@@ -39,7 +39,8 @@ const collapseOnClick = () => {
                     link.classList.contains("logo-link") ||
                     link.classList.contains("nav-link")
                 ) {
-                    const navbarToggler = document.querySelector(".navbar-toggler");
+                    const navbarToggler =
+                        document.querySelector(".navbar-toggler");
                     if (!navbarToggler.classList.contains("collapsed")) {
                         navbarToggler.click();
                     }
@@ -65,7 +66,7 @@ const enableScrollSpy = () => {
     const breakpoint = 992;
     const scrollSpyConfig = {
         target: "#navbar",
-        offset: 50,
+        rootMargin: "-25% 0px -25%",
     };
 
     if (window.innerWidth >= breakpoint) {
@@ -86,7 +87,8 @@ const collapseNavbarOnClickAndScroll = () => {
     //Function to check and collapse navbar
     const checkAndCollapseNavbar = () => {
         const navbarToggler = document.querySelector(".navbar-toggler");
-        const isNavbarExpanded = navbarToggler.getAttribute("aria-expanded") === "true";
+        const isNavbarExpanded =
+            navbarToggler.getAttribute("aria-expanded") === "true";
 
         if (isNavbarExpanded) {
             navbarToggler.click();
@@ -103,7 +105,7 @@ const collapseNavbarOnClickAndScroll = () => {
 
     //Event listener for scroll
     window.addEventListener("scroll", checkAndCollapseNavbar);
-}
+};
 
 // Initialize all functionalities
 const init = () => {
