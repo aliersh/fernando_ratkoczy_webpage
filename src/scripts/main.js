@@ -75,26 +75,36 @@ const enableScrollSpy = () => {
     window.addEventListener("resize", enableScrollSpy);
 };
 
-// Function to collapse the navbar when clicked outside of it
-const collapseNavbarOnClickOutside = () => {
-    document.addEventListener("click", (event) => {
-        const navbarElement = document.getElementById("navbar");
+// Function to collapse the navbar when clicked outside of it or scroll
+const collapseNavbarOnClickAndScroll = () => {
+    //Function to check and collapse navbar
+    const checkAndCollapseNavbar = () => {
         const navbarToggler = document.querySelector(".navbar-toggler");
-        const isNavbarExpanded =
-            navbarToggler.getAttribute("aria-expanded") === "true";
+        const isNavbarExpanded = navbarToggler.getAttribute("aria-expanded") === "true";
 
-        if (!navbarElement.contains(event.target) && isNavbarExpanded) {
+        if (isNavbarExpanded) {
             navbarToggler.click();
         }
+    };
+
+    //Event listener for click
+    document.addEventListener("click", (event) => {
+        const navbarElement = document.getElementById("navbar");
+        if (!navbarElement.contains(event.target)) {
+            checkAndCollapseNavbar();
+        }
     });
-};
+
+    //Event listener for scroll
+    window.addEventListener("scroll", checkAndCollapseNavbar);
+}
 
 // Initialize all functionalities
 const init = () => {
     initNavbarLinks();
     handleWindowResize();
     enableScrollSpy();
-    collapseNavbarOnClickOutside();
+    collapseNavbarOnClickAndScroll();
 };
 
 init();
