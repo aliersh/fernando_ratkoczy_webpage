@@ -2,6 +2,10 @@
     background-color: $secondary-100;
 }
 
+.carousel-item {
+    height: 380px;
+}
+
 .testimonial-carousel {
     @include carousel-styles(700px, null, null, 1rem);
 }
@@ -15,14 +19,11 @@
     color: map-get($carousel-colors, "text");
     margin: auto;
     font-style: italic;
+    min-height: 175px;
 
     @include media-breakpoint-up(md) {
         max-width: 75%;
     }
-}
-
-.carousel {
-    min-height: max-content;
 }
 
 .carousel-inner blockquote:before,
