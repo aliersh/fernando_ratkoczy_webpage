@@ -1,5 +1,5 @@
 .service-card {
-    @include card-styles(400px);
+    @include card-styles(400px, 500px);
 }
 
 .contact-card {

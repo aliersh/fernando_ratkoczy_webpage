@@ -75,11 +75,12 @@
 }
 
 // Mixin for common card styles
-@mixin card-styles($max-width) {
+@mixin card-styles($max-width, $min-height: null) {
     border-radius: 1rem;
     box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
     padding: 0.7rem;
     max-width: $max-width;
+    min-height: $min-height;
     margin-left: auto;
     margin-right: auto;
 }
