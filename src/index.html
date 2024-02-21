@@ -254,12 +254,12 @@
                                             $600 <small>/ 12 sessions</small>
                                         </span>
                                     </span>
-                                    <h5 class="card-title fs-4">
+                                    <h4 class="card-title fs-4">
                                         Career Coach
-                                    </h5>
-                                    <h6 class="card-subtitle mt-3">
+                                    </h4>
+                                    <h5 class="card-subtitle mt-3">
                                         Navigate and Advance Your Career
-                                    </h6>
+                                    </h5>
                                     <ul
                                         class="list-group mt-3 d-flex flex-column card-features"
                                     >
@@ -299,12 +299,12 @@
                                             $1200 <small>/ 12 sessions</small>
                                         </span>
                                     </span>
-                                    <h5 class="card-title fs-4">
+                                    <h4 class="card-title fs-4">
                                         Executive Coach
-                                    </h5>
-                                    <h6 class="card-subtitle mt-3">
+                                    </h4>
+                                    <h5 class="card-subtitle mt-3">
                                         Lead with Confidence and Vision
-                                    </h6>
+                                    </h5>
                                     <ul
                                         class="list-group mt-3 d-flex flex-column card-features"
                                     >
@@ -392,27 +392,31 @@
                                         type="button"
                                         data-bs-target="#carouselTestimonial"
                                         data-bs-slide-to="1"
-                                        aria-current="true"
                                         aria-label="Testimonial 2"
                                     ></button>
                                     <button
                                         type="button"
                                         data-bs-target="#carouselTestimonial"
                                         data-bs-slide-to="2"
-                                        aria-current="true"
                                         aria-label="Testimonial 3"
                                     ></button>
                                     <button
                                         type="button"
                                         data-bs-target="#carouselTestimonial"
                                         data-bs-slide-to="3"
-                                        aria-current="true"
                                         aria-label="Testimonial 4"
                                     ></button>
                                 </div>
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <blockquote class="text-center">
+                                    <div
+                                        class="carousel-item active"
+                                        itemscope
+                                        itemtype="http://schema.org/Review"
+                                    >
+                                        <blockquote
+                                            class="text-center"
+                                            itemprop="reviewBody"
+                                        >
                                             <p class="mb-4 testimonial-text">
                                                 Fernando's guidance in profile
                                                 updates, resume enhancement, and
@@ -428,20 +432,36 @@
                                                 <img
                                                     class="rounded-circle"
                                                     src="/src/images/tes1.jpeg"
-                                                    alt="Marc G. Testimonial"
+                                                    alt="Marc G., who provided a testimonial on Fernando's coaching services"
+                                                    itemprop="image"
                                                 />
-                                                <strong class="d-block mt-3"
-                                                    >Marc G.</strong
+                                                <div
+                                                    itemprop="author"
+                                                    itemscope
+                                                    itemtype="http://schema.org/Person"
                                                 >
-                                                <small
-                                                    >Digital Media
-                                                    Advertising</small
-                                                >
+                                                    <strong
+                                                        class="d-block mt-3"
+                                                        itemprop="name"
+                                                        >Marc G.</strong
+                                                    >
+                                                    <small itemprop="jobTitle"
+                                                        >Digital Media
+                                                        Advertising</small
+                                                    >
+                                                </div>
                                             </footer>
                                         </blockquote>
                                     </div>
-                                    <div class="carousel-item">
-                                        <blockquote class="text-center">
+                                    <div
+                                        class="carousel-item"
+                                        itemscope
+                                        itemtype="http://schema.org/Review"
+                                    >
+                                        <blockquote
+                                            class="text-center"
+                                            itemprop="reviewBody"
+                                        >
                                             <p class="mb-4 testimonial-text">
                                                 Fernando excels in motivating
                                                 and guiding personal and
@@ -457,17 +477,35 @@
                                                 <img
                                                     class="rounded-circle"
                                                     src="/src/images/tes2.jpeg"
-                                                    alt="Sergio Rivera Testimonial"
+                                                    alt="Sergio Rivera, Vocational Coach, endorsing Fernando's services"
+                                                    itemprop="image"
                                                 />
-                                                <strong class="d-block mt-3"
-                                                    >Sergio Rivera</strong
+                                                <div
+                                                    itemprop="author"
+                                                    itemscope
+                                                    itemtype="http://schema.org/Person"
                                                 >
-                                                <small>Vocational Coach</small>
+                                                    <strong
+                                                        class="d-block mt-3"
+                                                        itemprop="name"
+                                                        >Sergio Rivera</strong
+                                                    >
+                                                    <small itemprop="jobTitle"
+                                                        >Vocational Coach</small
+                                                    >
+                                                </div>
                                             </footer>
                                         </blockquote>
                                     </div>
-                                    <div class="carousel-item">
-                                        <blockquote class="text-center">
+                                    <div
+                                        class="carousel-item"
+                                        itemscope
+                                        itemtype="http://schema.org/Review"
+                                    >
+                                        <blockquote
+                                            class="text-center"
+                                            itemprop="reviewBody"
+                                        >
                                             <p class="mb-4 testimonial-text">
                                                 Working with Fernando is
                                                 exceptional; he's a
@@ -483,20 +521,36 @@
                                                 <img
                                                     class="rounded-circle"
                                                     src="/src/images/tes3.jpeg"
-                                                    alt="Jonathan Teich Testimonial"
+                                                    alt="Jonathan Teich, Strategic Product Manager, smiling in his testimonial photo"
+                                                    itemprop="image"
                                                 />
-                                                <strong class="d-block mt-3"
-                                                    >Jonathan Teich</strong
+                                                <div
+                                                    itemprop="author"
+                                                    itemscope
+                                                    itemtype="http://schema.org/Person"
                                                 >
-                                                <small
-                                                    >Strategic Product
-                                                    Manager</small
-                                                >
+                                                    <strong
+                                                        class="d-block mt-3"
+                                                        itemprop="name"
+                                                        >Jonathan Teich</strong
+                                                    >
+                                                    <small itemprop="jobTitle"
+                                                        >Strategic Product
+                                                        Manager</small
+                                                    >
+                                                </div>
                                             </footer>
                                         </blockquote>
                                     </div>
-                                    <div class="carousel-item">
-                                        <blockquote class="text-center">
+                                    <div
+                                        class="carousel-item"
+                                        itemscope
+                                        itemtype="http://schema.org/Review"
+                                    >
+                                        <blockquote
+                                            class="text-center"
+                                            itemprop="reviewBody"
+                                        >
                                             <p class="mb-4 testimonial-text">
                                                 In a few sessions with Fernando,
                                                 I gained confidence for
@@ -513,15 +567,24 @@
                                                 <img
                                                     class="rounded-circle"
                                                     src="/src/images/tes4.jpeg"
-                                                    alt="Jonathan Teich Testimonial"
+                                                    alt="Sofia Di Russo, M.A. in Criminology and Justice, featured in her testimonial"
+                                                    itemprop="image"
                                                 />
-                                                <strong class="d-block mt-3"
-                                                    >Sofia Di Russo</strong
+                                                <div
+                                                    itemprop="author"
+                                                    itemscope
+                                                    itemtype="http://schema.org/Person"
                                                 >
-                                                <small
-                                                    >M.A. Criminology and
-                                                    Justice</small
-                                                >
+                                                    <strong
+                                                        class="d-block mt-3"
+                                                        itemprop="name"
+                                                        >Sofia Di Russo</strong
+                                                    >
+                                                    <small itemprop="jobTitle"
+                                                        >M.A. Criminology and
+                                                        Justice</small
+                                                    >
+                                                </div>
                                             </footer>
                                         </blockquote>
                                     </div>
@@ -531,6 +594,7 @@
                                     type="button"
                                     data-bs-target="#carouselTestimonial"
                                     data-bs-slide="prev"
+                                    aria-label="Previous testimonial"
                                 >
                                     <span
                                         class="carousel-control-prev-icon"
@@ -545,6 +609,7 @@
                                     type="button"
                                     data-bs-target="#carouselTestimonial"
                                     data-bs-slide="next"
+                                    aria-label="Next testimonial"
                                 >
                                     <span
                                         class="carousel-control-next-icon"
