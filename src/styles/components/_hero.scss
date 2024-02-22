@@ -1,5 +1,25 @@
 #home {
     background-color: $dark-background;
+
+    @include media-breakpoint-up(lg) {
+        position: relative;
+        overflow: hidden;
+        min-height: 75vh;
+
+        #hero-img {
+            max-width: 700px;
+            position: absolute;
+            bottom: 0;
+        
+            @include media-breakpoint-only(xl) {
+                right: 0;
+            }
+
+            @include media-breakpoint-only(lg) {
+                right: -130px;
+            }
+        }
+    }
 }
 
 #hero-head-text {
@@ -8,8 +28,4 @@
 
 #hero-text {
     @include hero-text-style($font-secondary, "text", 400);
-}
-
-#hero-img {
-    width: 700px;
 }
