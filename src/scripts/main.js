@@ -1,7 +1,11 @@
 import "../styles/main.scss";
 import "bootstrap";
 
-import { collapseNavbarOnClickAndScroll, collapseOnClick, handleWindowResize } from "./navbar.js";
+import {
+    collapseNavbarOnClickAndScroll,
+    collapseOnClick,
+    handleWindowResize,
+} from "./navbar.js";
 import { enableScrollSpy } from "./scrollspy.js";
 import { startCountUpAnimation } from "./countUp.js";
 
