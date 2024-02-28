@@ -22,6 +22,10 @@
             @media (max-height: 990px) and (max-width: 1049px) and (min-width: 992px) {
                 max-width: 600px;
             }
+
+            @media (max-height: 990px) and (min-width: 1200px) {
+                max-width: 600px;
+            }
         }
     }
 }
