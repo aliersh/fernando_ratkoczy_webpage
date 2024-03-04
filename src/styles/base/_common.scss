@@ -8,3 +8,8 @@
 i {
     color: $accent-color;
 }
+
+::selection {
+    background-color: $primary-color;
+    color: $primary-50;
+}
