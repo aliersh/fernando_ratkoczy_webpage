@@ -10,21 +10,65 @@
             max-width: 700px;
             position: absolute;
             bottom: 0;
-        
-            @include media-breakpoint-only(xl) {
-                right: 0;
+
+            @include media-breakpoint-up(lg) {
+                max-width: 550px;
+                // right: 300px;
+
+                @media (max-height: 1040px) {
+                    max-width: 475px;
+                }
             }
 
-            @include media-breakpoint-only(lg) {
-                right: -130px;
+            // 4k resolutions
+            @media screen and (min-width: 2560px) and (min-height: 1440px) {
+                max-width: 750px;
             }
 
-            @media (max-height: 990px) and (max-width: 1049px) and (min-width: 992px) {
-                max-width: 600px;
+            @media screen and (min-width: 3840px) and (min-height: 2160px) {
+                max-width: 1100px;
             }
 
-            @media (max-height: 990px) and (min-width: 1200px) {
-                max-width: 600px;
+            // Tablets landscape
+            @media screen and (min-width: 1180px) and (min-height: 820px) {
+                max-width: 630px;
+            }
+
+            @media screen and (min-width: 1280px) and (min-height: 991px) {
+                max-width: 520px;
+            }
+
+            // iPad Pro portrait
+            @media screen and (min-width: 1024px) and (min-height: 1366px) {
+                max-width: 700px;
+                right: -60px;
+            }
+
+            // iPad Pro landscape
+            @media screen and (min-width: 1366px) and (min-height: 1024px) {
+                max-width: 540px;
+            }
+             //Others
+            @media screen and (min-width: 1368px) and (min-height: 912px) {
+                max-width: 480px;
+            }
+
+            @media screen and (min-width: 1600px) and (min-height: 2560px) {
+                max-width: 1000px;
+            }
+
+            @media screen and (min-width: 2560px) and (min-height: 1600px) {
+                max-width: 840px;
+                right: auto;
+            }
+
+            @media screen and (min-width: 1440px) and (min-height:900px) {
+                max-width: 470px;
+            }
+
+            @media screen and (min-width: 2560px) and (min-height:1440px) {
+                max-width: 750px;
+                right: auto;
             }
         }
     }
